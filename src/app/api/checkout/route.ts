@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server";
-import { stripe, PLANS, type PlanId } from "@/lib/stripe";
+import { getStripe, PLANS, type PlanId } from "@/lib/stripe";
 
 export async function POST(request: NextRequest) {
   try {
@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
     // Créer la session Checkout
-    const session = await stripe.checkout.sessions.create({
+    const session = await getStripe().checkout.sessions.create({
       payment_method_types: ["card"],
       mode: "payment",
       line_items: [
