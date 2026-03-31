@@ -22,8 +22,8 @@ export const PLANS = {
     id: "single",
     name: "Analyse unique",
     description: "Analyse complète d'un seul devis photovoltaïque",
-    price: 5900, // centimes
-    priceDisplay: "59€",
+    price: 2900, // centimes
+    priceDisplay: "29€",
     analyses: 1,
     validityDays: null,
   },
@@ -31,8 +31,8 @@ export const PLANS = {
     id: "project",
     name: "Projet complet",
     description: "Analyses illimitées pendant 2 mois sur un même projet",
-    price: 8900, // centimes
-    priceDisplay: "89€",
+    price: 5900, // centimes
+    priceDisplay: "59€",
     analyses: -1, // illimité
     validityDays: 60,
   },

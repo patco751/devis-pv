@@ -13,16 +13,38 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Devis PV - Analyseur de devis photovoltaïques",
+  title: "DevisPV — Analysez votre devis photovoltaïque par IA",
   description:
-    "Faites analyser votre devis panneaux solaires par une IA experte. Scoring technique, financier et fiabilité installateur en quelques minutes.",
+    "Uploadez votre devis panneaux solaires et obtenez un rapport d'analyse complet en quelques minutes : scoring technique, financier et fiabilité installateur. À partir de 29 €.",
   keywords: [
     "devis panneaux solaires",
     "analyse devis photovoltaique",
     "vérifier devis solaire",
     "prix panneaux solaires",
     "installateur RGE",
+    "devis photovoltaique",
+    "scoring devis solaire",
+    "autoconsommation",
+    "prime EDF OA",
   ],
+  openGraph: {
+    title: "DevisPV — Votre devis solaire est-il au juste prix ?",
+    description:
+      "IA experte en photovoltaïque. Scoring technique, financier et fiabilité installateur. Rapport PDF complet avec projection financière sur 25 ans.",
+    type: "website",
+    locale: "fr_FR",
+    siteName: "DevisPV",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DevisPV — Analysez votre devis photovoltaïque par IA",
+    description:
+      "Scoring complet de votre devis solaire : technique, financier, fiabilité. À partir de 29 €.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

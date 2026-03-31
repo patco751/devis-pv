@@ -55,30 +55,39 @@ AXE A — TECHNIQUE (note /10)
 Critères à évaluer :
 - Cohérence du dimensionnement par rapport à une consommation résidentielle type
 - Qualité et réputation des panneaux (Tier 1, certifications IEC 61215/61730)
-- Qualité de l'onduleur (rendement, garantie fabricant, adéquation avec la puissance)
+- Qualité de l'onduleur (rendement européen, garantie fabricant, adéquation avec la puissance)
 - Ratio de dimensionnement onduleur/panneaux (acceptable entre 0.8 et 1.2)
 - Pertinence du type de pose par rapport au contexte (toiture, orientation)
-- Cohérence de la production annuelle estimée (fourchette réaliste selon la zone géographique)
-- Présence de composants essentiels (coffret DC, parafoudre, monitoring)
+- Cohérence de la production annuelle estimée via la formule : E = Pc × Gi × PR / 1000 (PR typique 0.75-0.85)
+- Pertes système réalistes : température (-0.3 à -0.5%/°C au-delà de 25°C), salissure (2-5%), câblage (1-2%), mismatch (1-2%), onduleur (2-4%)
+- Dégradation annuelle panneaux : 0.5-0.7%/an (garantie linéaire 25-30 ans : 80-92% puissance nominale)
+- Présence de composants essentiels (coffret DC, parafoudre, monitoring, système de coupure d'urgence)
+- Conformité aux normes : UTE C 15-712-1 (PV raccordé réseau), NF C 15-100, guide APSAD D20 (sécurité incendie)
 
 AXE B — FINANCIER (note /10)
 Critères à évaluer :
 - Prix au Wc TTC (référence marché 2024-2026 : 1.80 à 2.50 €/Wc pour 3-9 kWc en surimposition)
 - Comparaison avec les fourchettes de prix habituelles selon la puissance
 - Cohérence de la TVA appliquée (10 % si ≤ 3 kWc raccordé réseau sur logement > 2 ans, 20 % sinon)
-- Réalisme du temps de retour sur investissement annoncé
-- Vérification de l'éligibilité aux aides mentionnées (prime autoconso selon puissance, tarif rachat EDF OA)
-- Transparence du devis (détail des postes, pas de frais cachés)
+- Réalisme du temps de retour sur investissement annoncé (typiquement 8-12 ans résidentiel)
+- Vérification de l'éligibilité aux aides : prime autoconsommation (versée sur 5 ans, 1/5 par an), tarif rachat EDF OA (contrat 20 ans)
+- Fiscalité : exonération IR pour vente ≤ 3 kWc ; au-delà micro-BIC (abattement 71%)
+- OPEX à prévoir : maintenance préventive, assurance, remplacement onduleur (année 12-15), TURPE
+- Transparence du devis (détail des postes : fourniture, pose, raccordement, démarches, Consuel)
 - Alerte si crédit à la consommation avec taux élevé ou si location/leasing
+- Vérifier la mention du Consuel et des frais de raccordement Enedis (CACSI ≤ 36 kVA, CAE au-delà)
 
 AXE C — FIABILITÉ INSTALLATEUR (note /10)
 Critères à évaluer :
-- Qualification RGE mentionnée et vérifiable
-- Présence de l'assurance décennale
-- Durée et étendue des garanties (norme : panneaux 25 ans, onduleur 10-20 ans, pose 10 ans)
-- SIRET présent et cohérent
+- Qualification RGE mentionnée et vérifiable (QualiPV/Qualit'ENR obligatoire pour les aides)
+- Présence de l'assurance décennale (obligatoire, couvre vices et malfaçons pendant 10 ans)
+- RC Professionnelle et RC exploitation mentionnées
+- Durée et étendue des garanties (référence : panneaux 25 ans produit + linéaire 25-30 ans, onduleur 10-25 ans extensible, pose/main d'œuvre 10 ans)
+- SIRET présent et cohérent (vérifiable sur pappers.fr ou societe.com)
 - Signaux d'alerte : démarchage téléphonique, vente en foire, absence de visite technique préalable
-- Mention du Consuel et du raccordement Enedis dans le devis
+- Mention du Consuel (attestation conformité obligatoire avant mise en service)
+- Mention du raccordement Enedis et des démarches administratives (DP urbanisme, contrat EDF OA)
+- Mention d'un planning prévisionnel réaliste
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 3. SCORE GLOBAL ET VERDICT

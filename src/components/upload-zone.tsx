@@ -14,8 +14,8 @@ const MAX_SIZE_BYTES = MAX_SIZE_MB * 1024 * 1024;
 type PlanId = "single" | "project";
 
 const PLANS: { id: PlanId; name: string; price: string; desc: string }[] = [
-  { id: "single", name: "Analyse unique", price: "59€", desc: "1 devis analysé" },
-  { id: "project", name: "Projet complet", price: "89€", desc: "Illimité pendant 2 mois" },
+  { id: "single", name: "Analyse unique", price: "29€", desc: "1 devis analysé" },
+  { id: "project", name: "Projet complet", price: "59€", desc: "Illimité pendant 2 mois" },
 ];
 
 export default function UploadZone() {
@@ -138,8 +138,8 @@ export default function UploadZone() {
           text-center transition-all duration-200
           ${
             dragging
-              ? "border-primary bg-blue-50 dark:bg-blue-950/30"
-              : "border-zinc-300 bg-zinc-50 hover:border-primary hover:bg-blue-50/50 dark:border-zinc-700 dark:bg-zinc-900 dark:hover:border-primary dark:hover:bg-blue-950/20"
+              ? "border-primary bg-orange-50 dark:bg-orange-950/30"
+              : "border-zinc-300 bg-zinc-50 hover:border-primary hover:bg-orange-50/50 dark:border-zinc-700 dark:bg-zinc-900 dark:hover:border-primary dark:hover:bg-orange-950/20"
           }
         `}
       >
@@ -151,7 +151,7 @@ export default function UploadZone() {
           className="hidden"
         />
 
-        <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/40">
+        <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-orange-100 dark:bg-orange-900/40">
           <svg
             className="h-8 w-8 text-primary"
             fill="none"
@@ -182,7 +182,7 @@ export default function UploadZone() {
       {file && (
         <div className="mt-4 flex items-center justify-between rounded-xl border border-zinc-200 bg-white px-4 py-3 dark:border-zinc-700 dark:bg-zinc-900">
           <div className="flex items-center gap-3 min-w-0">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/40">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-orange-100 dark:bg-orange-900/40">
               <svg
                 className="h-5 w-5 text-primary"
                 fill="none"
@@ -235,7 +235,7 @@ export default function UploadZone() {
                 rounded-xl border-2 px-4 py-3 text-left transition-all
                 ${
                   selectedPlan === plan.id
-                    ? "border-primary bg-blue-50 dark:bg-blue-950/30"
+                    ? "border-primary bg-orange-50 dark:bg-orange-950/30"
                     : "border-zinc-200 bg-white hover:border-zinc-300 dark:border-zinc-700 dark:bg-zinc-900 dark:hover:border-zinc-600"
                 }
               `}
@@ -268,7 +268,7 @@ export default function UploadZone() {
           transition-all duration-200
           ${
             file && !loading
-              ? "bg-primary hover:bg-primary-hover shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 active:scale-[0.98]"
+              ? "bg-primary hover:bg-primary-hover shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 active:scale-[0.98]"
               : "cursor-not-allowed bg-zinc-300 dark:bg-zinc-700"
           }
         `}

@@ -22,7 +22,9 @@ export async function POST(request: NextRequest) {
     }
 
     const plan = PLANS[planId as PlanId];
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+    // Détecte l'URL d'origine automatiquement (fonctionne quel que soit le port)
+    const origin = request.headers.get("origin") || request.headers.get("referer")?.replace(/\/$/, "") || process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+    const baseUrl = origin.replace(/\/$/, "");
 
     // Créer la session Checkout
     const session = await getStripe().checkout.sessions.create({

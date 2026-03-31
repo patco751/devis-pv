@@ -32,7 +32,7 @@ export default function AnnulePage() {
         </p>
         <button
           onClick={() => router.push("/")}
-          className="mt-8 rounded-xl bg-primary px-8 py-3 text-sm font-semibold text-white hover:bg-primary-hover shadow-lg shadow-blue-500/25 transition-all"
+          className="mt-8 rounded-xl bg-primary px-8 py-3 text-sm font-semibold text-white hover:bg-primary-hover shadow-lg shadow-orange-500/25 transition-all"
         >
           Retour à l'accueil
         </button>

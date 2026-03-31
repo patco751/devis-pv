@@ -39,14 +39,20 @@ export default function Home() {
             >
               Tarifs
             </a>
+            <a
+              href="#faq"
+              className="text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+            >
+              FAQ
+            </a>
           </nav>
         </div>
       </header>
 
       {/* Hero */}
-      <section className="flex flex-1 flex-col items-center justify-center px-6 py-16 bg-gradient-to-b from-blue-50/50 to-white dark:from-zinc-950 dark:to-zinc-900">
+      <section className="flex flex-1 flex-col items-center justify-center px-6 py-16 bg-gradient-to-b from-orange-50/50 to-white dark:from-zinc-950 dark:to-zinc-900">
         <div className="max-w-2xl text-center">
-          <div className="mx-auto mb-6 inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-4 py-1.5 text-sm font-medium text-primary dark:border-blue-800 dark:bg-blue-950/40">
+          <div className="mx-auto mb-6 inline-flex items-center rounded-full border border-orange-200 bg-orange-50 px-4 py-1.5 text-sm font-medium text-primary dark:border-orange-800 dark:bg-orange-950/40">
             Analyse par IA experte
           </div>
           <h1 className="text-4xl font-extrabold tracking-tight text-zinc-900 sm:text-5xl dark:text-zinc-50">
@@ -115,7 +121,7 @@ export default function Home() {
               },
             ].map((item) => (
               <div key={item.step} className="text-center">
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-100 dark:bg-blue-900/30">
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-100 dark:bg-orange-900/30">
                   <svg
                     className="h-7 w-7 text-primary"
                     fill="none"
@@ -158,7 +164,7 @@ export default function Home() {
               </h3>
               <div className="mt-4">
                 <span className="text-4xl font-extrabold text-zinc-900 dark:text-zinc-50">
-                  59€
+                  29€
                 </span>
               </div>
               <p className="mt-3 text-sm text-zinc-500 dark:text-zinc-400">
@@ -189,13 +195,13 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <button className="mt-8 w-full rounded-xl border-2 border-primary py-3 text-sm font-semibold text-primary hover:bg-blue-50 transition-colors dark:hover:bg-blue-950/30">
+              <button className="mt-8 w-full rounded-xl border-2 border-primary py-3 text-sm font-semibold text-primary hover:bg-orange-50 transition-colors dark:hover:bg-orange-950/30">
                 Choisir ce forfait
               </button>
             </div>
 
             {/* Forfait 2 */}
-            <div className="relative rounded-2xl border-2 border-primary bg-white p-8 shadow-lg shadow-blue-500/10 dark:bg-zinc-950">
+            <div className="relative rounded-2xl border-2 border-primary bg-white p-8 shadow-lg shadow-orange-500/10 dark:bg-zinc-950">
               <div className="absolute -top-3 right-6 rounded-full bg-accent px-3 py-1 text-xs font-bold text-white">
                 Populaire
               </div>
@@ -204,7 +210,7 @@ export default function Home() {
               </h3>
               <div className="mt-4">
                 <span className="text-4xl font-extrabold text-zinc-900 dark:text-zinc-50">
-                  89€
+                  59€
                 </span>
               </div>
               <p className="mt-3 text-sm text-zinc-500 dark:text-zinc-400">
@@ -235,10 +241,71 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <button className="mt-8 w-full rounded-xl bg-primary py-3 text-sm font-semibold text-white hover:bg-primary-hover shadow-lg shadow-blue-500/25 transition-all">
+              <button className="mt-8 w-full rounded-xl bg-primary py-3 text-sm font-semibold text-white hover:bg-primary-hover shadow-lg shadow-orange-500/25 transition-all">
                 Choisir ce forfait
               </button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section
+        id="faq"
+        className="border-t border-zinc-200 bg-white px-6 py-20 dark:border-zinc-800 dark:bg-zinc-950"
+      >
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-center text-3xl font-bold text-zinc-900 dark:text-zinc-50">
+            Questions fréquentes
+          </h2>
+          <div className="mt-12 space-y-4">
+            {[
+              {
+                q: "Comment fonctionne l'analyse ?",
+                a: "Vous uploadez votre devis (PDF ou photo) et notre IA experte en photovoltaïque extrait toutes les données, vérifie les prix par rapport au marché, contrôle la qualité du matériel et la certification RGE de l'installateur. Vous recevez un rapport complet en moins de 2 minutes.",
+              },
+              {
+                q: "L'analyse est-elle fiable ?",
+                a: "Notre IA s'appuie sur les références de prix officielles (photovoltaique.info, CRE, tarifs EDF OA en vigueur) et les normes du secteur. Elle détecte les prix anormalement élevés, les matériels de mauvaise qualité et les signaux d'arnaque. Cela ne remplace pas un avis d'expert humain, mais c'est un excellent premier filtre.",
+              },
+              {
+                q: "Mes données sont-elles protégées ?",
+                a: "Oui. Votre devis est analysé en temps réel et n'est pas stocké sur nos serveurs. Le traitement est effectué de manière sécurisée et les données sont supprimées immédiatement après l'analyse.",
+              },
+              {
+                q: "Pourquoi 29 € et pas gratuit ?",
+                a: "L'analyse mobilise une IA avancée spécialisée en photovoltaïque. Le coût couvre le traitement et vous garantit un rapport de qualité professionnelle. C'est bien moins cher qu'un audit expert (200-500 €) et peut vous faire économiser des milliers d'euros sur un devis surévalué.",
+              },
+              {
+                q: "Que contient le rapport PDF ?",
+                a: "Le rapport inclut : le scoring global et par axe (technique, financier, fiabilité), toutes les données extraites du devis, une projection financière sur 25 ans (ROI, gains cumulés, rendement), et 3 à 5 recommandations personnalisées.",
+              },
+              {
+                q: "Quels types de devis puis-je analyser ?",
+                a: "Tout devis d'installation photovoltaïque résidentielle en France : panneaux solaires en toiture (surimposition ou IAB), sur pergola, carport ou au sol. Autoconsommation avec vente de surplus ou vente totale.",
+              },
+            ].map((faq) => (
+              <details
+                key={faq.q}
+                className="group rounded-xl border border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900"
+              >
+                <summary className="flex cursor-pointer items-center justify-between px-6 py-4 text-left text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+                  {faq.q}
+                  <svg
+                    className="h-5 w-5 shrink-0 text-zinc-400 transition-transform group-open:rotate-180"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2}
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </summary>
+                <p className="px-6 pb-4 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                  {faq.a}
+                </p>
+              </details>
+            ))}
           </div>
         </div>
       </section>
@@ -250,13 +317,13 @@ export default function Home() {
             &copy; {new Date().getFullYear()} DevisPV. Tous droits réservés.
           </p>
           <div className="flex gap-6 text-sm text-zinc-500 dark:text-zinc-400">
-            <a href="#" className="hover:text-zinc-900 dark:hover:text-zinc-100">
+            <a href="/mentions-legales" className="hover:text-zinc-900 dark:hover:text-zinc-100">
               Mentions légales
             </a>
-            <a href="#" className="hover:text-zinc-900 dark:hover:text-zinc-100">
+            <a href="/cgv" className="hover:text-zinc-900 dark:hover:text-zinc-100">
               CGV
             </a>
-            <a href="#" className="hover:text-zinc-900 dark:hover:text-zinc-100">
+            <a href="mailto:dessapatrick@gmail.com" className="hover:text-zinc-900 dark:hover:text-zinc-100">
               Contact
             </a>
           </div>
