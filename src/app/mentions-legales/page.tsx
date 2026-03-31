@@ -24,8 +24,9 @@ export default function MentionsLegales() {
             <h2 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-3">&Eacute;diteur du site</h2>
             <p>
               Le site DevisPV (ci-apr&egrave;s &laquo; le Site &raquo;) est &eacute;dit&eacute; par :<br />
-              <strong>Azatassou DESSA</strong><br />
-              Entrepreneur individuel<br />
+              <strong>Azatassou DESSA (EI)</strong><br />
+              SIREN 904 538 774<br />
+              209 rue Amp&egrave;re 69400 Villefranche-sur-Sa&ocirc;ne<br />
               Email : contact@devis-pv.fr
             </p>
           </section>

@@ -73,8 +73,9 @@ export default function Contact() {
         {/* Infos légales */}
         <div className="mt-10 text-sm text-zinc-400 dark:text-zinc-500">
           <p>
-            <strong className="text-zinc-600 dark:text-zinc-300">Azatassou DESSA</strong><br />
-            Entrepreneur individuel<br />
+            <strong className="text-zinc-600 dark:text-zinc-300">Azatassou DESSA (EI)</strong><br />
+            SIREN 904 538 774<br />
+            209 rue Amp&egrave;re 69400 Villefranche-sur-Sa&ocirc;ne<br />
             Email : <a href="mailto:contact@devis-pv.fr" className="text-primary hover:underline">contact@devis-pv.fr</a>
           </p>
         </div>
