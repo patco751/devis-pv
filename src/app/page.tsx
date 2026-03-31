@@ -323,7 +323,7 @@ export default function Home() {
             <a href="/cgv" className="hover:text-zinc-900 dark:hover:text-zinc-100">
               CGV
             </a>
-            <a href="mailto:dessapatrick@gmail.com" className="hover:text-zinc-900 dark:hover:text-zinc-100">
+            <a href="/contact" className="hover:text-zinc-900 dark:hover:text-zinc-100">
               Contact
             </a>
           </div>

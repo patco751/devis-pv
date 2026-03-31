@@ -24,9 +24,9 @@ export default function MentionsLegales() {
             <h2 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-3">&Eacute;diteur du site</h2>
             <p>
               Le site DevisPV (ci-apr&egrave;s &laquo; le Site &raquo;) est &eacute;dit&eacute; par :<br />
-              <strong>Patrick Azatassou</strong><br />
+              <strong>Azatassou DESSA</strong><br />
               Entrepreneur individuel<br />
-              Email : dessapatrick@gmail.com
+              Email : contact@devis-pv.fr
             </p>
           </section>
 
@@ -60,7 +60,7 @@ export default function MentionsLegales() {
             <p className="mt-2">
               Conform&eacute;ment au RGPD, vous disposez d&apos;un droit d&apos;acc&egrave;s, de rectification et de
               suppression de vos donn&eacute;es. Pour exercer ces droits, contactez-nous &agrave;
-              dessapatrick@gmail.com.
+              contact@devis-pv.fr.
             </p>
           </section>
 

@@ -110,7 +110,7 @@ export default function CGV() {
             <h2 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-3">Article 9 — Contact</h2>
             <p>
               Pour toute question relative aux pr&eacute;sentes CGV ou au service DevisPV,
-              contactez-nous &agrave; : <a href="mailto:dessapatrick@gmail.com" className="text-primary hover:underline">dessapatrick@gmail.com</a>
+              contactez-nous &agrave; : <a href="mailto:contact@devis-pv.fr" className="text-primary hover:underline">contact@devis-pv.fr</a>
             </p>
           </section>
         </div>
