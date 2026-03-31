@@ -70,14 +70,89 @@ export default function Contact() {
           </p>
         </div>
 
-        {/* Infos légales */}
-        <div className="mt-10 text-sm text-zinc-400 dark:text-zinc-500">
-          <p>
-            <strong className="text-zinc-600 dark:text-zinc-300">Azatassou DESSA (EI)</strong><br />
-            SIREN 904 538 774<br />
-            209 rue Amp&egrave;re 69400 Villefranche-sur-Sa&ocirc;ne<br />
-            Email : <a href="mailto:contact@devis-pv.fr" className="text-primary hover:underline">contact@devis-pv.fr</a>
-          </p>
+        {/* Formulaire de contact */}
+        <div className="mt-10 rounded-xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-950">
+          <h2 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-6">Envoyez-nous un message</h2>
+          <form
+            action={`https://formsubmit.co/contact@devis-pv.fr`}
+            method="POST"
+            className="space-y-4"
+          >
+            {/* Anti-spam honeypot */}
+            <input type="text" name="_honey" className="hidden" />
+            {/* Disable captcha */}
+            <input type="hidden" name="_captcha" value="false" />
+            {/* Redirect after submit */}
+            <input type="hidden" name="_next" value="https://devis-pv.fr/contact?sent=1" />
+            <input type="hidden" name="_subject" value="Nouveau message depuis DevisPV" />
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">
+                  Nom
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100"
+                  placeholder="Votre nom"
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100"
+                  placeholder="votre@email.com"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="subject" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">
+                Sujet
+              </label>
+              <select
+                id="subject"
+                name="subject_type"
+                className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 focus:border-primary focus:ring-1 focus:ring-primary outline-none dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100"
+              >
+                <option value="question">Question sur le service</option>
+                <option value="problem">Probl&egrave;me technique</option>
+                <option value="billing">Paiement / facturation</option>
+                <option value="partnership">Partenariat</option>
+                <option value="other">Autre</option>
+              </select>
+            </div>
+
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows={5}
+                className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none resize-none dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100"
+                placeholder="Votre message..."
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="w-full rounded-xl bg-primary py-3 text-sm font-semibold text-white hover:bg-primary-hover shadow-lg shadow-orange-500/25 transition-all sm:w-auto sm:px-8"
+            >
+              Envoyer le message
+            </button>
+          </form>
         </div>
       </main>
     </div>
