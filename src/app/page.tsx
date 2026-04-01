@@ -67,7 +67,7 @@ export default function Home() {
         </div>
 
         {/* Upload Zone */}
-        <div className="mt-12 w-full max-w-xl">
+        <div id="upload" className="mt-12 w-full max-w-xl">
           <UploadZone />
         </div>
       </section>
@@ -195,9 +195,9 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <button className="mt-8 w-full rounded-xl border-2 border-primary py-3 text-sm font-semibold text-primary hover:bg-orange-50 transition-colors dark:hover:bg-orange-950/30">
+              <a href="#single" className="mt-8 block w-full rounded-xl border-2 border-primary py-3 text-sm font-semibold text-primary hover:bg-orange-50 transition-colors dark:hover:bg-orange-950/30 text-center">
                 Choisir ce forfait
-              </button>
+              </a>
             </div>
 
             {/* Forfait 2 */}
@@ -241,9 +241,9 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <button className="mt-8 w-full rounded-xl bg-primary py-3 text-sm font-semibold text-white hover:bg-primary-hover shadow-lg shadow-orange-500/25 transition-all">
+              <a href="#project" className="mt-8 block w-full rounded-xl bg-primary py-3 text-sm font-semibold text-white hover:bg-primary-hover shadow-lg shadow-orange-500/25 transition-all text-center">
                 Choisir ce forfait
-              </button>
+              </a>
             </div>
           </div>
         </div>

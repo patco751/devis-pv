@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 
 const ACCEPTED_TYPES = [
   "application/pdf",
@@ -25,6 +25,20 @@ export default function UploadZone() {
   const [error, setError] = useState<string | null>(null);
   const [selectedPlan, setSelectedPlan] = useState<PlanId>("single");
   const inputRef = useRef<HTMLInputElement>(null);
+
+  // Pré-sélectionner le forfait via le hash URL (#single ou #project)
+  useEffect(() => {
+    function applyHash() {
+      const h = window.location.hash.replace("#", "");
+      if (h === "single" || h === "project") {
+        setSelectedPlan(h);
+        document.getElementById("upload")?.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+    applyHash();
+    window.addEventListener("hashchange", applyHash);
+    return () => window.removeEventListener("hashchange", applyHash);
+  }, []);
 
   const validate = useCallback((f: File): string | null => {
     if (!ACCEPTED_TYPES.includes(f.type)) {
