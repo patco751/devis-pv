@@ -106,7 +106,7 @@ IMPORTANT : Réponds UNIQUEMENT avec le JSON, sans texte avant ni après.`;
     const textBlock = response.content.find((block) => block.type === "text");
     if (!textBlock || textBlock.type !== "text") {
       return Response.json(
-        { error: "Réponse vide de l'IA." },
+        { error: "Réponse vide du système d'analyse." },
         { status: 500 }
       );
     }
@@ -125,7 +125,7 @@ IMPORTANT : Réponds UNIQUEMENT avec le JSON, sans texte avant ni après.`;
 
     if (error instanceof SyntaxError) {
       return Response.json(
-        { error: "L'IA n'a pas pu produire une analyse structurée. Réessayez." },
+        { error: "Le système n'a pas pu produire une analyse structurée. Réessayez." },
         { status: 500 }
       );
     }

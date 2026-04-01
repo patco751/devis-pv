@@ -8,7 +8,7 @@ import { createProjectSession, addAnalysisToSession, getProjectSession } from "@
 const STEPS = [
   { id: "payment", label: "Paiement", desc: "Confirmation Stripe" },
   { id: "reading", label: "Lecture", desc: "Extraction du devis" },
-  { id: "analysis", label: "Analyse", desc: "Scoring IA expert" },
+  { id: "analysis", label: "Analyse", desc: "Scoring expert" },
   { id: "report", label: "Rapport", desc: "G\u00e9n\u00e9ration du rapport" },
 ] as const;
 
@@ -258,7 +258,7 @@ function SuccesContent() {
             ? error
             : allDone
             ? "Redirection vers votre rapport..."
-            : "Notre IA experte traite votre devis. Cela prend environ 30 secondes."}
+            : "Notre système expert traite votre devis. Cela prend environ 30 secondes."}
         </p>
 
         {/* Stepper */}

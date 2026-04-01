@@ -35,7 +35,7 @@ export default function Home() {
       <section className="flex flex-1 flex-col items-center justify-center px-6 py-16 bg-gradient-to-b from-orange-50/50 to-white dark:from-zinc-950 dark:to-zinc-900">
         <div className="max-w-2xl text-center">
           <div className="mx-auto mb-6 inline-flex items-center rounded-full border border-orange-200 bg-orange-50 px-4 py-1.5 text-sm font-medium text-primary dark:border-orange-800 dark:bg-orange-950/40">
-            Analyse par IA experte
+            Analyse par système expert
           </div>
           <h1 className="text-4xl font-extrabold tracking-tight text-zinc-900 sm:text-5xl dark:text-zinc-50">
             Votre devis solaire est-il{" "}
@@ -79,7 +79,7 @@ export default function Home() {
               },
               {
                 step: "2",
-                title: "L'IA analyse tout",
+                title: "Le système analyse tout",
                 desc: "Extraction des données, vérification des prix, du matériel et de la certification RGE.",
                 icon: (
                   <path
@@ -244,11 +244,11 @@ export default function Home() {
             {[
               {
                 q: "Comment fonctionne l'analyse ?",
-                a: "Vous uploadez votre devis (PDF ou photo) et notre IA experte en photovoltaïque extrait toutes les données, vérifie les prix par rapport au marché, contrôle la qualité du matériel et la certification RGE de l'installateur. Vous recevez un rapport complet en moins de 2 minutes.",
+                a: "Vous uploadez votre devis (PDF ou photo) et notre système expert en photovoltaïque extrait toutes les données, vérifie les prix par rapport au marché, contrôle la qualité du matériel et la certification RGE de l'installateur. Vous recevez un rapport complet en moins de 2 minutes.",
               },
               {
                 q: "L'analyse est-elle fiable ?",
-                a: "Notre IA s'appuie sur les références de prix officielles (photovoltaique.info, CRE, tarifs EDF OA en vigueur) et les normes du secteur. Elle détecte les prix anormalement élevés, les matériels de mauvaise qualité et les signaux d'arnaque. Cela ne remplace pas un avis d'expert humain, mais c'est un excellent premier filtre.",
+                a: "Notre système s'appuie sur les références de prix officielles (photovoltaique.info, CRE, tarifs EDF OA en vigueur) et les normes du secteur. Elle détecte les prix anormalement élevés, les matériels de mauvaise qualité et les signaux d'arnaque. Cela ne remplace pas un avis d'expert humain, mais c'est un excellent premier filtre.",
               },
               {
                 q: "Mes données sont-elles protégées ?",
@@ -256,7 +256,7 @@ export default function Home() {
               },
               {
                 q: "Pourquoi 29 € et pas gratuit ?",
-                a: "L'analyse mobilise une IA avancée spécialisée en photovoltaïque. Le coût couvre le traitement et vous garantit un rapport de qualité professionnelle. C'est bien moins cher qu'un audit expert (200-500 €) et peut vous faire économiser des milliers d'euros sur un devis surévalué.",
+                a: "L'analyse mobilise un système avancé spécialisé en photovoltaïque. Le coût couvre le traitement et vous garantit un rapport de qualité professionnelle. C'est bien moins cher qu'un audit expert (200-500 €) et peut vous faire économiser des milliers d'euros sur un devis surévalué.",
               },
               {
                 q: "Que contient le rapport PDF ?",

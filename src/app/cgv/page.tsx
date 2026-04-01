@@ -80,7 +80,7 @@ export default function CGV() {
           <section>
             <h2 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-3">Article 6 — Limitation de responsabilit&eacute;</h2>
             <p>
-              Les analyses fournies par DevisPV sont g&eacute;n&eacute;r&eacute;es par intelligence artificielle
+              Les analyses fournies par DevisPV sont g&eacute;n&eacute;r&eacute;es par analyse automatisée
               &agrave; titre indicatif. Elles ne constituent en aucun cas un avis professionnel, un
               conseil en investissement ou une expertise certifi&eacute;e. L&apos;&eacute;diteur ne saurait
               &ecirc;tre tenu responsable des d&eacute;cisions prises par le Client sur la base de ces

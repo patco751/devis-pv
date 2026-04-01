@@ -54,7 +54,7 @@ export default function MentionsLegales() {
           <section>
             <h2 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-3">Donn&eacute;es personnelles</h2>
             <p>
-              Les devis upload&eacute;s sont trait&eacute;s en temps r&eacute;el par notre IA et ne sont pas stock&eacute;s sur
+              Les devis upload&eacute;s sont trait&eacute;s en temps r&eacute;el par notre système et ne sont pas stock&eacute;s sur
               nos serveurs apr&egrave;s analyse. Aucune donn&eacute;e personnelle n&apos;est collect&eacute;e en dehors des
               informations strictement n&eacute;cessaires au traitement du paiement (g&eacute;r&eacute; par Stripe).
             </p>
@@ -77,7 +77,7 @@ export default function MentionsLegales() {
           <section>
             <h2 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-3">Responsabilit&eacute;</h2>
             <p>
-              Les analyses fournies par DevisPV sont g&eacute;n&eacute;r&eacute;es par intelligence artificielle
+              Les analyses fournies par DevisPV sont g&eacute;n&eacute;r&eacute;es par analyse automatisée
               &agrave; titre informatif. Elles ne constituent ni un conseil professionnel, ni un avis
               d&apos;expert agr&eacute;&eacute;. L&apos;&eacute;diteur ne saurait &ecirc;tre tenu responsable des d&eacute;cisions
               prises sur la base de ces analyses.

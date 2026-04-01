@@ -13,13 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DevisPV — Analysez votre devis photovoltaïque par IA",
+  title: "DevisPV \u2014 Analysez votre devis photovolta\u00efque par analyse experte",
   description:
-    "Uploadez votre devis panneaux solaires et obtenez un rapport d'analyse complet en quelques minutes : scoring technique, financier et fiabilité installateur. À partir de 29 €.",
+    "Uploadez votre devis panneaux solaires et obtenez un rapport d'analyse complet en quelques minutes : scoring technique, financier et fiabilit\u00e9 installateur. \u00c0 partir de 29 \u20ac.",
   keywords: [
     "devis panneaux solaires",
     "analyse devis photovoltaique",
-    "vérifier devis solaire",
+    "v\u00e9rifier devis solaire",
     "prix panneaux solaires",
     "installateur RGE",
     "devis photovoltaique",
@@ -28,18 +28,18 @@ export const metadata: Metadata = {
     "prime EDF OA",
   ],
   openGraph: {
-    title: "DevisPV — Votre devis solaire est-il au juste prix ?",
+    title: "DevisPV \u2014 Votre devis solaire est-il au juste prix ?",
     description:
-      "IA experte en photovoltaïque. Scoring technique, financier et fiabilité installateur. Rapport PDF complet avec projection financière sur 25 ans.",
+      "Syst\u00e8me expert en photovolta\u00efque. Scoring technique, financier et fiabilit\u00e9 installateur. Rapport PDF complet avec projection financi\u00e8re sur 25 ans.",
     type: "website",
     locale: "fr_FR",
     siteName: "DevisPV",
   },
   twitter: {
     card: "summary_large_image",
-    title: "DevisPV — Analysez votre devis photovoltaïque par IA",
+    title: "DevisPV \u2014 Analysez votre devis photovolta\u00efque par analyse experte",
     description:
-      "Scoring complet de votre devis solaire : technique, financier, fiabilité. À partir de 29 €.",
+      "Scoring complet de votre devis solaire : technique, financier, fiabilit\u00e9. \u00c0 partir de 29 \u20ac.",
   },
   robots: {
     index: true,
