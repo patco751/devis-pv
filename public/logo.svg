@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- Background circle gradient -->
+  <defs>
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+    <linearGradient id="rayGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="panelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a5f"/>
+      <stop offset="100%" stop-color="#0f2440"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sun rays -->
+  <g transform="translate(256, 200)">
+    <!-- Ray top -->
+    <rect x="-4" y="-120" width="8" height="35" rx="4" fill="url(#rayGrad)"/>
+    <!-- Ray top-right -->
+    <rect x="-4" y="-120" width="8" height="35" rx="4" fill="url(#rayGrad)" transform="rotate(45)"/>
+    <!-- Ray right -->
+    <rect x="-4" y="-120" width="8" height="35" rx="4" fill="url(#rayGrad)" transform="rotate(90)"/>
+    <!-- Ray bottom-right -->
+    <rect x="-4" y="-120" width="8" height="35" rx="4" fill="url(#rayGrad)" transform="rotate(135)"/>
+    <!-- Ray bottom -->
+    <rect x="-4" y="-120" width="8" height="35" rx="4" fill="url(#rayGrad)" transform="rotate(180)"/>
+    <!-- Ray bottom-left -->
+    <rect x="-4" y="-120" width="8" height="35" rx="4" fill="url(#rayGrad)" transform="rotate(225)"/>
+    <!-- Ray left -->
+    <rect x="-4" y="-120" width="8" height="35" rx="4" fill="url(#rayGrad)" transform="rotate(270)"/>
+    <!-- Ray top-left -->
+    <rect x="-4" y="-120" width="8" height="35" rx="4" fill="url(#rayGrad)" transform="rotate(315)"/>
+  </g>
+
+  <!-- Sun circle -->
+  <circle cx="256" cy="200" r="70" fill="url(#sunGrad)"/>
+  <!-- Sun inner highlight -->
+  <circle cx="245" cy="188" r="50" fill="#fbbf24" opacity="0.3"/>
+
+  <!-- Solar panel (tilted rectangle with grid) -->
+  <g transform="translate(256, 360)">
+    <!-- Panel body -->
+    <rect x="-100" y="-40" width="200" height="80" rx="6" fill="url(#panelGrad)" stroke="#2d5a8a" stroke-width="3"/>
+    <!-- Panel frame -->
+    <rect x="-92" y="-33" width="88" height="30" rx="2" fill="#2563eb" opacity="0.4" stroke="#4a90d9" stroke-width="1"/>
+    <rect x="4" y="-33" width="88" height="30" rx="2" fill="#2563eb" opacity="0.4" stroke="#4a90d9" stroke-width="1"/>
+    <rect x="-92" y="3" width="88" height="30" rx="2" fill="#2563eb" opacity="0.35" stroke="#4a90d9" stroke-width="1"/>
+    <rect x="4" y="3" width="88" height="30" rx="2" fill="#2563eb" opacity="0.35" stroke="#4a90d9" stroke-width="1"/>
+    <!-- Panel grid lines -->
+    <line x1="-48" y1="-33" x2="-48" y2="-3" stroke="#4a90d9" stroke-width="0.8"/>
+    <line x1="48" y1="-33" x2="48" y2="-3" stroke="#4a90d9" stroke-width="0.8"/>
+    <line x1="-48" y1="3" x2="-48" y2="33" stroke="#4a90d9" stroke-width="0.8"/>
+    <line x1="48" y1="3" x2="48" y2="33" stroke="#4a90d9" stroke-width="0.8"/>
+    <!-- Panel stand -->
+    <rect x="-4" y="40" width="8" height="25" rx="2" fill="#374151"/>
+    <rect x="-30" y="62" width="60" height="6" rx="3" fill="#374151"/>
+  </g>
+
+  <!-- Check mark badge -->
+  <circle cx="370" cy="160" r="35" fill="#16a34a"/>
+  <path d="M352 160l12 12 24-24" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

@@ -1,6 +1,7 @@
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 import type { AnalyseDevis } from "@/lib/system-prompt";
+import { LOGO_BASE64 } from "@/lib/logo-data";
 
 const VERDICT_LABELS: Record<string, string> = {
   EXCELLENT: "EXCELLENT",
@@ -38,10 +39,15 @@ export function generatePDF(data: AnalyseDevis): jsPDF {
   doc.setFillColor(...accentRGB);
   doc.rect(0, 38, pageWidth, 2, "F");
 
+  // Logo
+  try {
+    doc.addImage(`data:image/png;base64,${LOGO_BASE64}`, "PNG", margin, 5, 12, 12);
+  } catch { /* fallback sans logo */ }
+
   doc.setTextColor(255, 255, 255);
   doc.setFontSize(24);
   doc.setFont("helvetica", "bold");
-  doc.text("DevisPV", margin, 18);
+  doc.text("DevisPV", margin + 15, 15);
 
   doc.setFontSize(12);
   doc.setFont("helvetica", "normal");

@@ -4,6 +4,7 @@ import { useState, useCallback, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { isProjectPlanActive, addAnalysisToSession, getAnalysisCount } from "@/lib/storage";
 import type { AnalyseDevis } from "@/lib/system-prompt";
+import { LogoWithText } from "@/components/logo";
 
 const ACCEPTED_TYPES = [
   "application/pdf",
@@ -130,14 +131,7 @@ export default function ProjetAnalyserPage() {
         <header className="border-b border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950">
           <div className="mx-auto flex h-16 max-w-5xl items-center px-6">
             <a href="/" className="flex items-center gap-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-                <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
-                </svg>
-              </div>
-              <span className="text-xl font-bold text-zinc-900 dark:text-zinc-50">
-                Devis<span className="text-primary">PV</span>
-              </span>
+              <LogoWithText />
             </a>
           </div>
         </header>
@@ -168,14 +162,7 @@ export default function ProjetAnalyserPage() {
       <header className="border-b border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950">
         <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
           <a href="/" className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-              <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
-              </svg>
-            </div>
-            <span className="text-xl font-bold text-zinc-900 dark:text-zinc-50">
-              Devis<span className="text-primary">PV</span>
-            </span>
+            <LogoWithText />
           </a>
           <button
             onClick={() => router.push("/comparaison")}
