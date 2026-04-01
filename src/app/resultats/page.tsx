@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
-import { useRouter } from "next/navigation";
+import { useEffect, useState, useCallback, Suspense } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import type { AnalyseDevis } from "@/lib/system-prompt";
 import { generatePDF } from "@/lib/export-pdf";
+import { getAnalysisById, getAllAnalyses, isProjectPlanActive } from "@/lib/storage";
 
 const VERDICT_CONFIG = {
   EXCELLENT: { label: "Excellent", emoji: "✅", color: "text-emerald-600", bg: "bg-emerald-50 border-emerald-200 dark:bg-emerald-950/30 dark:border-emerald-800" },
@@ -292,11 +293,92 @@ function FinancialProjection({ extraction }: { extraction: AnalyseDevis["extract
   );
 }
 
-export default function ResultatsPage() {
-  const [data, setData] = useState<AnalyseDevis | null>(null);
+/** Bannière projet — visible uniquement pour le forfait 59€ */
+function ProjectBanner({ currentId }: { currentId?: string }) {
   const router = useRouter();
+  const [analyses, setAnalyses] = useState<ReturnType<typeof getAllAnalyses>>([]);
+  const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
+    setIsActive(isProjectPlanActive());
+    setAnalyses(getAllAnalyses());
+  }, [currentId]);
+
+  if (!isActive || analyses.length === 0) return null;
+
+  return (
+    <div className="mx-auto w-full max-w-4xl px-6 mt-6">
+      <div className="rounded-xl border border-orange-200 bg-orange-50 p-4 dark:border-orange-800 dark:bg-orange-950/30">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+              Forfait Projet — {analyses.length} devis analys&eacute;{analyses.length > 1 ? "s" : ""}
+            </p>
+            <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5">
+              Vous pouvez analyser d&apos;autres devis et les comparer entre eux.
+            </p>
+          </div>
+          <div className="flex gap-2">
+            <button
+              onClick={() => router.push("/projet/analyser")}
+              className="rounded-lg border border-primary px-4 py-2 text-xs font-semibold text-primary hover:bg-orange-100 dark:hover:bg-orange-900/30 transition-colors"
+            >
+              + Analyser un autre devis
+            </button>
+            {analyses.length >= 2 && (
+              <button
+                onClick={() => router.push("/comparaison")}
+                className="rounded-lg bg-primary px-4 py-2 text-xs font-semibold text-white hover:bg-primary-hover transition-colors"
+              >
+                Comparer mes devis
+              </button>
+            )}
+          </div>
+        </div>
+
+        {/* Liste des devis analysés */}
+        {analyses.length > 1 && (
+          <div className="mt-3 flex flex-wrap gap-2">
+            {analyses.map((a) => (
+              <button
+                key={a.id}
+                onClick={() => router.push(`/resultats?id=${a.id}`)}
+                className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
+                  a.id === currentId
+                    ? "bg-primary text-white"
+                    : "bg-white text-zinc-700 border border-zinc-200 hover:border-primary dark:bg-zinc-800 dark:text-zinc-300 dark:border-zinc-700"
+                }`}
+              >
+                {a.label}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function ResultatsContent() {
+  const [data, setData] = useState<AnalyseDevis | null>(null);
+  const [analysisId, setAnalysisId] = useState<string | undefined>();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const id = searchParams.get("id");
+
+    // Forfait projet : charger depuis localStorage par ID
+    if (id) {
+      const stored = getAnalysisById(id);
+      if (stored) {
+        setData(stored.analysis);
+        setAnalysisId(stored.id);
+        return;
+      }
+    }
+
+    // Forfait simple (29€) : charger depuis sessionStorage
     const raw = sessionStorage.getItem("analyse-result");
     if (!raw) {
       router.push("/");
@@ -307,7 +389,7 @@ export default function ResultatsPage() {
     } catch {
       router.push("/");
     }
-  }, [router]);
+  }, [searchParams, router]);
 
   const downloadPDF = useCallback(() => {
     if (!data) return;
@@ -355,6 +437,9 @@ export default function ResultatsPage() {
           </button>
         </div>
       </header>
+
+      {/* Bannière projet 59€ */}
+      <ProjectBanner currentId={analysisId} />
 
       <main className="mx-auto w-full max-w-4xl px-6 py-10">
         {/* Verdict global + Camembert */}
@@ -489,5 +574,19 @@ export default function ResultatsPage() {
         </div>
       </main>
     </div>
+  );
+}
+
+export default function ResultatsPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex flex-1 items-center justify-center">
+          <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
+        </div>
+      }
+    >
+      <ResultatsContent />
+    </Suspense>
   );
 }

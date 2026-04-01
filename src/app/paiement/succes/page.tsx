@@ -3,6 +3,7 @@
 import { useEffect, useState, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
+import { createProjectSession, addAnalysisToSession, getProjectSession } from "@/lib/storage";
 
 const STEPS = [
   { id: "payment", label: "Paiement", desc: "Confirmation Stripe" },
@@ -168,15 +169,29 @@ function SuccesContent() {
         advanceStep(2); // analysis done -> report
 
         // Step 4: Store result
+        const planId = verifyData.planId;
         sessionStorage.setItem("analyse-result", JSON.stringify(analysis));
         sessionStorage.removeItem(`file-${fileId}`);
+
+        if (planId === "project") {
+          // Forfait 59€ : sauvegarder dans localStorage pour comparaison
+          if (!getProjectSession()) {
+            createProjectSession(sessionId || "");
+          }
+          const stored = addAnalysisToSession(analysis);
+          sessionStorage.setItem("last-analysis-id", stored.id);
+        }
 
         await new Promise((r) => setTimeout(r, 600));
         advanceStep(3); // report done
 
         // Redirect after a brief pause to show completion
         await new Promise((r) => setTimeout(r, 500));
-        router.push("/resultats");
+        if (planId === "project") {
+          router.push(`/resultats?id=${sessionStorage.getItem("last-analysis-id") || ""}`);
+        } else {
+          router.push("/resultats");
+        }
       } catch (err) {
         const msg = err instanceof Error ? err.message : "Erreur inconnue.";
         setError(msg);

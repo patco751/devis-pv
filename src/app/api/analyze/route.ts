@@ -89,6 +89,7 @@ IMPORTANT : Réponds UNIQUEMENT avec le JSON, sans texte avant ni après.`;
     const response = await client.messages.create({
       model: "claude-sonnet-4-20250514",
       max_tokens: 4096,
+      temperature: 0,
       system: SYSTEM_PROMPT,
       messages: [
         {
