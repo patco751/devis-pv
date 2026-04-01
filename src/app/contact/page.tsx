@@ -1,17 +1,52 @@
+"use client";
+
+import { useState } from "react";
+import { LogoWithText } from "@/components/logo";
+
 export default function Contact() {
+  const [loading, setLoading] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      subject: (form.elements.namedItem("subject_type") as HTMLSelectElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) {
+        const d = await res.json().catch(() => ({}));
+        throw new Error(d.error || "Erreur lors de l'envoi.");
+      }
+
+      setSent(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Erreur inconnue.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
   return (
     <div className="flex flex-1 flex-col">
       <header className="border-b border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950">
         <div className="mx-auto flex h-16 max-w-5xl items-center px-6">
           <a href="/" className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-              <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
-              </svg>
-            </div>
-            <span className="text-xl font-bold text-zinc-900 dark:text-zinc-50">
-              Devis<span className="text-primary">PV</span>
-            </span>
+            <LogoWithText />
           </a>
         </div>
       </header>
@@ -73,86 +108,116 @@ export default function Contact() {
         {/* Formulaire de contact */}
         <div className="mt-10 rounded-xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-950">
           <h2 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100 mb-6">Envoyez-nous un message</h2>
-          <form
-            action={`https://formsubmit.co/contact@devis-pv.fr`}
-            method="POST"
-            className="space-y-4"
-          >
-            {/* Anti-spam honeypot */}
-            <input type="text" name="_honey" className="hidden" />
-            {/* Disable captcha */}
-            <input type="hidden" name="_captcha" value="false" />
-            {/* Redirect after submit */}
-            <input type="hidden" name="_next" value="https://devis-pv.fr/contact?sent=1" />
-            <input type="hidden" name="_subject" value="Nouveau message depuis DevisPV" />
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">
-                  Nom
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100"
-                  placeholder="Votre nom"
-                />
+          {sent ? (
+            <div className="text-center py-8">
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-100 dark:bg-emerald-900/40">
+                <svg className="h-8 w-8 text-emerald-600" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
               </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100"
-                  placeholder="votre@email.com"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="subject" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">
-                Sujet
-              </label>
-              <select
-                id="subject"
-                name="subject_type"
-                className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 focus:border-primary focus:ring-1 focus:ring-primary outline-none dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100"
+              <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">Message envoy&eacute; !</h3>
+              <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
+                Nous vous r&eacute;pondrons dans les plus brefs d&eacute;lais.
+              </p>
+              <button
+                onClick={() => setSent(false)}
+                className="mt-4 text-sm font-medium text-primary hover:underline"
               >
-                <option value="question">Question sur le service</option>
-                <option value="problem">Probl&egrave;me technique</option>
-                <option value="billing">Paiement / facturation</option>
-                <option value="partnership">Partenariat</option>
-                <option value="other">Autre</option>
-              </select>
+                Envoyer un autre message
+              </button>
             </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">
+                    Nom
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100"
+                    placeholder="Votre nom"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100"
+                    placeholder="votre@email.com"
+                  />
+                </div>
+              </div>
 
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                required
-                rows={5}
-                className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none resize-none dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100"
-                placeholder="Votre message..."
-              />
-            </div>
+              <div>
+                <label htmlFor="subject" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">
+                  Sujet
+                </label>
+                <select
+                  id="subject"
+                  name="subject_type"
+                  className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 focus:border-primary focus:ring-1 focus:ring-primary outline-none dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100"
+                >
+                  <option value="question">Question sur le service</option>
+                  <option value="problem">Probl&egrave;me technique</option>
+                  <option value="billing">Paiement / facturation</option>
+                  <option value="partnership">Partenariat</option>
+                  <option value="other">Autre</option>
+                </select>
+              </div>
 
-            <button
-              type="submit"
-              className="w-full rounded-xl bg-primary py-3 text-sm font-semibold text-white hover:bg-primary-hover shadow-lg shadow-orange-500/25 transition-all sm:w-auto sm:px-8"
-            >
-              Envoyer le message
-            </button>
-          </form>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows={5}
+                  className="w-full rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 placeholder-zinc-400 focus:border-primary focus:ring-1 focus:ring-primary outline-none resize-none dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100"
+                  placeholder="Votre message..."
+                />
+              </div>
+
+              {error && (
+                <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-900 dark:bg-red-950/30 dark:text-red-400">
+                  {error}
+                </div>
+              )}
+
+              <button
+                type="submit"
+                disabled={loading}
+                className={`w-full rounded-xl py-3 text-sm font-semibold text-white transition-all sm:w-auto sm:px-8 ${
+                  loading
+                    ? "bg-zinc-400 cursor-not-allowed"
+                    : "bg-primary hover:bg-primary-hover shadow-lg shadow-orange-500/25"
+                }`}
+              >
+                {loading ? (
+                  <span className="flex items-center justify-center gap-2">
+                    <svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                    </svg>
+                    Envoi en cours...
+                  </span>
+                ) : (
+                  "Envoyer le message"
+                )}
+              </button>
+            </form>
+          )}
         </div>
       </main>
     </div>
