@@ -60,8 +60,10 @@ export function generatePDF(data: AnalyseDevis): jsPDF {
 
   y += 10;
   const verdict = VERDICT_LABELS[data.scoring.verdict] ?? "N/A";
+  // Calculer le score global de fa\u00E7on identique \u00E0 la page r\u00E9sultats
+  const scoreGlobal = (data.scoring.technique.note * 35 + data.scoring.financier.note * 40 + data.scoring.fiabilite_installateur.note * 25) / 100;
   doc.setFontSize(36);
-  doc.text(`${data.scoring.score_global.toFixed(1)}/10`, margin, y + 5);
+  doc.text(`${scoreGlobal.toFixed(1)}/10`, margin, y + 5);
 
   doc.setFontSize(14);
   const verdictColor = getVerdictColor(data.scoring.verdict);
