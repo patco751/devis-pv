@@ -28,7 +28,7 @@ export default function ArnaquesPanneauxSolairesSignauxAlerte() {
             "@context": "https://schema.org",
             "@type": "Article",
             headline:
-              "Arnaques panneaux solaires : 10 signaux d\u2019alerte \u00e0 reconna\u00eetre",
+              "Arnaques panneaux solaires : 10 signaux d\’alerte à reconnaître",
             datePublished: "2026-04-04",
             dateModified: "2026-04-04",
             author: { "@type": "Organization", name: "DevisPV" },

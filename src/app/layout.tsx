@@ -16,15 +16,15 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://devis-pv.fr"),
   title: {
     default:
-      "DevisPV \u2014 Analysez votre devis photovolta\u00efque par analyse experte",
+      "DevisPV — Analysez votre devis photovoltaïque par analyse experte",
     template: "%s | DevisPV",
   },
   description:
-    "Uploadez votre devis panneaux solaires et obtenez un rapport d\u2019analyse complet en quelques minutes : scoring technique, financier et fiabilit\u00e9 installateur. \u00c0 partir de 29 \u20ac.",
+    "Uploadez votre devis panneaux solaires et obtenez un rapport d\’analyse complet en quelques minutes : scoring technique, financier et fiabilité installateur. À partir de 29 €.",
   keywords: [
     "devis panneaux solaires",
     "analyse devis photovoltaique",
-    "v\u00e9rifier devis solaire",
+    "vérifier devis solaire",
     "prix panneaux solaires",
     "installateur RGE",
     "devis photovoltaique",
@@ -39,9 +39,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "DevisPV \u2014 Votre devis solaire est-il au juste prix ?",
+    title: "DevisPV — Votre devis solaire est-il au juste prix ?",
     description:
-      "Syst\u00e8me expert en photovolta\u00efque. Scoring technique, financier et fiabilit\u00e9 installateur. Rapport PDF complet avec projection financi\u00e8re sur 25 ans.",
+      "Système expert en photovoltaïque. Scoring technique, financier et fiabilité installateur. Rapport PDF complet avec projection financière sur 25 ans.",
     type: "website",
     locale: "fr_FR",
     siteName: "DevisPV",
@@ -50,9 +50,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "DevisPV \u2014 Analysez votre devis photovolta\u00efque par analyse experte",
+      "DevisPV — Analysez votre devis photovoltaïque par analyse experte",
     description:
-      "Scoring complet de votre devis solaire : technique, financier, fiabilit\u00e9. \u00c0 partir de 29 \u20ac.",
+      "Scoring complet de votre devis solaire : technique, financier, fiabilité. À partir de 29 €.",
   },
   robots: {
     index: true,

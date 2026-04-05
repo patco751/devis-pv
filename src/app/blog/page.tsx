@@ -2,9 +2,9 @@ import { blogPosts } from "@/lib/blog-data";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog \u2014 Guides et conseils photovolta\u00efques",
+  title: "Blog — Guides et conseils photovoltaïques",
   description:
-    "Guides pratiques pour votre projet solaire : v\u00e9rifier un devis, \u00e9viter les arnaques, comprendre les prix et les aides en France.",
+    "Guides pratiques pour votre projet solaire : vérifier un devis, éviter les arnaques, comprendre les prix et les aides en France.",
 };
 
 export default function BlogIndex() {
@@ -14,7 +14,7 @@ export default function BlogIndex() {
         Blog
       </h1>
       <p className="mt-3 text-zinc-500 dark:text-zinc-400">
-        Guides et conseils pour votre projet photovolta\u00efque.
+        Guides et conseils pour votre projet photovoltaïque.
       </p>
 
       <div className="mt-12 space-y-8">
@@ -32,7 +32,7 @@ export default function BlogIndex() {
                     year: "numeric",
                   })}
                 </time>
-                <span>\u00b7 {post.readTime} de lecture</span>
+                <span>· {post.readTime} de lecture</span>
               </div>
               <h2 className="mt-2 text-xl font-bold text-zinc-900 group-hover:text-primary transition-colors dark:text-zinc-100">
                 {post.title}
@@ -48,16 +48,16 @@ export default function BlogIndex() {
       {/* CTA */}
       <div className="mt-16 rounded-2xl border-2 border-orange-200 bg-orange-50 p-8 text-center dark:border-orange-800 dark:bg-orange-950/20">
         <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-50">
-          Vous avez re\u00e7u un devis ?
+          Vous avez reçu un devis ?
         </h2>
         <p className="mt-2 text-zinc-600 dark:text-zinc-400">
-          Faites-le analyser par notre syst\u00e8me expert en moins de 2 minutes.
+          Faites-le analyser par notre système expert en moins de 2 minutes.
         </p>
         <a
           href="/#upload"
           className="mt-4 inline-block rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-primary-hover transition-colors"
         >
-          Analyser mon devis \u2014 29 \u20ac
+          Analyser mon devis — 29 €
         </a>
       </div>
     </div>

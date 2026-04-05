@@ -8,34 +8,34 @@ import {
 
 const faqItems = [
   {
-    question: "Comment fonctionne l\u2019analyse ?",
+    question: "Comment fonctionne l\’analyse ?",
     answer:
-      "Vous uploadez votre devis (PDF ou photo) et notre syst\u00e8me expert en photovolta\u00efque extrait toutes les donn\u00e9es, v\u00e9rifie les prix par rapport au march\u00e9, contr\u00f4le la qualit\u00e9 du mat\u00e9riel et la certification RGE de l\u2019installateur. Vous recevez un rapport complet en moins de 2 minutes.",
+      "Vous uploadez votre devis (PDF ou photo) et notre système expert en photovoltaïque extrait toutes les données, vérifie les prix par rapport au marché, contrôle la qualité du matériel et la certification RGE de l\’installateur. Vous recevez un rapport complet en moins de 2 minutes.",
   },
   {
-    question: "L\u2019analyse est-elle fiable ?",
+    question: "L\’analyse est-elle fiable ?",
     answer:
-      "Notre syst\u00e8me s\u2019appuie sur les r\u00e9f\u00e9rences de prix officielles (photovoltaique.info, CRE, tarifs EDF OA en vigueur) et les normes du secteur. Elle d\u00e9tecte les prix anormalement \u00e9lev\u00e9s, les mat\u00e9riels de mauvaise qualit\u00e9 et les signaux d\u2019arnaque.",
+      "Notre système s\’appuie sur les références de prix officielles (photovoltaique.info, CRE, tarifs EDF OA en vigueur) et les normes du secteur. Elle détecte les prix anormalement élevés, les matériels de mauvaise qualité et les signaux d\’arnaque.",
   },
   {
-    question: "Mes donn\u00e9es sont-elles prot\u00e9g\u00e9es ?",
+    question: "Mes données sont-elles protégées ?",
     answer:
-      "Oui. Votre devis est analys\u00e9 en temps r\u00e9el et n\u2019est pas stock\u00e9 sur nos serveurs. Le traitement est effectu\u00e9 de mani\u00e8re s\u00e9curis\u00e9e et les donn\u00e9es sont supprim\u00e9es imm\u00e9diatement apr\u00e8s l\u2019analyse.",
+      "Oui. Votre devis est analysé en temps réel et n\’est pas stocké sur nos serveurs. Le traitement est effectué de manière sécurisée et les données sont supprimées immédiatement après l\’analyse.",
   },
   {
-    question: "Pourquoi 29 \u20ac et pas gratuit ?",
+    question: "Pourquoi 29 € et pas gratuit ?",
     answer:
-      "L\u2019analyse mobilise un syst\u00e8me avanc\u00e9 sp\u00e9cialis\u00e9 en photovolta\u00efque. Le co\u00fbt couvre le traitement et vous garantit un rapport de qualit\u00e9 professionnelle. C\u2019est bien moins cher qu\u2019un audit expert (200-500 \u20ac) et peut vous faire \u00e9conomiser des milliers d\u2019euros.",
+      "L\’analyse mobilise un système avancé spécialisé en photovoltaïque. Le coût couvre le traitement et vous garantit un rapport de qualité professionnelle. C\’est bien moins cher qu\’un audit expert (200-500 €) et peut vous faire économiser des milliers d\’euros.",
   },
   {
     question: "Que contient le rapport PDF ?",
     answer:
-      "Le rapport inclut : le scoring global et par axe (technique, financier, fiabilit\u00e9), toutes les donn\u00e9es extraites du devis, une projection financi\u00e8re sur 25 ans (ROI, gains cumul\u00e9s, rendement), et 3 \u00e0 5 recommandations personnalis\u00e9es.",
+      "Le rapport inclut : le scoring global et par axe (technique, financier, fiabilité), toutes les données extraites du devis, une projection financière sur 25 ans (ROI, gains cumulés, rendement), et 3 à 5 recommandations personnalisées.",
   },
   {
     question: "Quels types de devis puis-je analyser ?",
     answer:
-      "Tout devis d\u2019installation photovolta\u00efque r\u00e9sidentielle en France : panneaux solaires en toiture (surimposition ou IAB), sur pergola, carport ou au sol. Autoconsommation avec vente de surplus ou vente totale.",
+      "Tout devis d\’installation photovoltaïque résidentielle en France : panneaux solaires en toiture (surimposition ou IAB), sur pergola, carport ou au sol. Autoconsommation avec vente de surplus ou vente totale.",
   },
 ];
 

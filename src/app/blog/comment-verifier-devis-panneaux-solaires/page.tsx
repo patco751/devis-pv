@@ -25,7 +25,7 @@ export default function CommentVerifierDevisPanneauxSolaires() {
             "@context": "https://schema.org",
             "@type": "Article",
             headline:
-              "Comment v\u00e9rifier un devis panneaux solaires en 2026 : le guide complet",
+              "Comment vérifier un devis panneaux solaires en 2026 : le guide complet",
             datePublished: "2026-04-04",
             dateModified: "2026-04-04",
             author: { "@type": "Organization", name: "DevisPV" },

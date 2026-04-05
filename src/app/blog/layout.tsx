@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     default: "Blog | DevisPV",
   },
   description:
-    "Conseils et guides pour votre projet photovolta\u00efque : v\u00e9rifier un devis, \u00e9viter les arnaques, comprendre les prix et les aides.",
+    "Conseils et guides pour votre projet photovoltaïque : vérifier un devis, éviter les arnaques, comprendre les prix et les aides.",
   alternates: { canonical: "/blog" },
 };
 
@@ -50,7 +50,7 @@ export default function BlogLayout({
         <div className="mx-auto max-w-5xl flex flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="text-sm text-zinc-500">&copy; {new Date().getFullYear()} DevisPV</p>
           <div className="flex gap-6 text-sm text-zinc-500">
-            <a href="/mentions-legales" className="hover:text-zinc-900">Mentions l\u00e9gales</a>
+            <a href="/mentions-legales" className="hover:text-zinc-900">Mentions légales</a>
             <a href="/cgv" className="hover:text-zinc-900">CGV</a>
             <a href="/contact" className="hover:text-zinc-900">Contact</a>
           </div>

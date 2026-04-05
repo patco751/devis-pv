@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Conditions G\u00e9n\u00e9rales de Vente",
+  title: "Conditions Générales de Vente",
   description:
-    "CGV de DevisPV : tarifs, paiement, droit de r\u00e9tractation et responsabilit\u00e9.",
+    "CGV de DevisPV : tarifs, paiement, droit de rétractation et responsabilité.",
   alternates: { canonical: "/cgv" },
 };
 

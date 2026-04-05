@@ -6,7 +6,7 @@ export function OrganizationJsonLd() {
     url: "https://devis-pv.fr",
     logo: "https://devis-pv.fr/icon-512.png",
     description:
-      "Syst\u00e8me expert d\u2019analyse de devis photovolta\u00efques pour les particuliers en France.",
+      "Système expert d\’analyse de devis photovoltaïques pour les particuliers en France.",
     contactPoint: {
       "@type": "ContactPoint",
       email: "contact@devis-pv.fr",
@@ -58,7 +58,7 @@ export function ProductJsonLd() {
     applicationCategory: "UtilitiesApplication",
     operatingSystem: "Web",
     description:
-      "Analysez votre devis photovolta\u00efque et obtenez un scoring complet : technique, financier et fiabilit\u00e9 installateur.",
+      "Analysez votre devis photovoltaïque et obtenez un scoring complet : technique, financier et fiabilité installateur.",
     offers: [
       {
         "@type": "Offer",
@@ -66,7 +66,7 @@ export function ProductJsonLd() {
         price: "29.00",
         priceCurrency: "EUR",
         description:
-          "Analyse compl\u00e8te d\u2019un seul devis photovolta\u00efque avec rapport PDF.",
+          "Analyse complète d\’un seul devis photovoltaïque avec rapport PDF.",
       },
       {
         "@type": "Offer",
@@ -74,7 +74,7 @@ export function ProductJsonLd() {
         price: "59.00",
         priceCurrency: "EUR",
         description:
-          "Analyses illimit\u00e9es pendant 2 mois + comparaison de devis.",
+          "Analyses illimitées pendant 2 mois + comparaison de devis.",
       },
     ],
   };

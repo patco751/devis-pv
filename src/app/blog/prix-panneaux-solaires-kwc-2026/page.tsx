@@ -25,7 +25,7 @@ export default function PrixPanneauxSolairesKwc2026() {
             "@context": "https://schema.org",
             "@type": "Article",
             headline:
-              "Prix panneaux solaires 2026 : combien co\u00fbte le kWc en France ?",
+              "Prix panneaux solaires 2026 : combien coûte le kWc en France ?",
             datePublished: "2026-04-04",
             dateModified: "2026-04-04",
             author: { "@type": "Organization", name: "DevisPV" },
