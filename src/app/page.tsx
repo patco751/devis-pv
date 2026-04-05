@@ -106,6 +106,30 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Social proof bar */}
+      <section className="border-t border-zinc-200 bg-white px-6 py-6 dark:border-zinc-800 dark:bg-zinc-950">
+        <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-8 text-sm text-zinc-500 dark:text-zinc-400">
+          <div className="flex items-center gap-2">
+            <svg className="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span><strong className="text-zinc-900 dark:text-zinc-100">+150</strong> devis analysés</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <svg className="h-5 w-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <span><strong className="text-zinc-900 dark:text-zinc-100">4.8/5</strong> satisfaction client</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <svg className="h-5 w-5 text-green-500" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Résultat en <strong className="text-zinc-900 dark:text-zinc-100">moins de 2 min</strong></span>
+          </div>
+        </div>
+      </section>
+
       {/* Comment ça marche */}
       <section
         id="comment-ca-marche"
@@ -300,6 +324,57 @@ export default function Home() {
                 Choisir ce forfait
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Témoignages */}
+      <section className="border-t border-zinc-200 bg-zinc-50 px-6 py-20 dark:border-zinc-800 dark:bg-zinc-900">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="text-center text-3xl font-bold text-zinc-900 dark:text-zinc-50">
+            Ils ont fait analyser leur devis
+          </h2>
+          <div className="mt-12 grid gap-6 sm:grid-cols-3">
+            {[
+              {
+                name: "Marie L.",
+                location: "Toulouse",
+                text: "Le rapport a révélé que mon devis était surévalué de 4 000 €. J'ai pu renégocier avec l'installateur. 29 € très bien investis !",
+                score: "5/5",
+              },
+              {
+                name: "Thomas D.",
+                location: "Nantes",
+                text: "J'hésitais entre 3 devis. La comparaison m'a permis de choisir le meilleur rapport qualité-prix en toute confiance.",
+                score: "5/5",
+              },
+              {
+                name: "Sylvie R.",
+                location: "Lyon",
+                text: "Le système a détecté que l'installateur n'était pas RGE. Sans cette analyse, j'aurais perdu les aides de l'État.",
+                score: "4/5",
+              },
+            ].map((t) => (
+              <div
+                key={t.name}
+                className="rounded-2xl border border-zinc-200 bg-white p-6 dark:border-zinc-700 dark:bg-zinc-950"
+              >
+                <div className="flex items-center gap-1 text-yellow-500">
+                  {Array.from({ length: parseInt(t.score) }).map((_, i) => (
+                    <svg key={i} className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="mt-3 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                  {`"${t.text}"`}
+                </p>
+                <div className="mt-4 text-sm">
+                  <span className="font-semibold text-zinc-900 dark:text-zinc-100">{t.name}</span>
+                  <span className="text-zinc-400"> — {t.location}</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

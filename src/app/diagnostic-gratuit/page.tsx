@@ -99,6 +99,24 @@ export default function DiagnosticGratuit() {
   const handleSubmitEmail = async () => {
     setShowResult(true);
     setEmailSent(true);
+
+    if (state.email && state.email.includes("@")) {
+      fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: state.email,
+          source: "diagnostic-gratuit",
+          data: {
+            puissance: state.puissance,
+            prix: state.prix,
+            marque: state.marque,
+            rge: state.rge,
+            credit: state.credit,
+          },
+        }),
+      }).catch(() => {}); // fire and forget
+    }
   };
 
   const result = computeScore(state);
