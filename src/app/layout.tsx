@@ -13,9 +13,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DevisPV \u2014 Analysez votre devis photovolta\u00efque par analyse experte",
+  metadataBase: new URL("https://devis-pv.fr"),
+  title: {
+    default:
+      "DevisPV \u2014 Analysez votre devis photovolta\u00efque par analyse experte",
+    template: "%s | DevisPV",
+  },
   description:
-    "Uploadez votre devis panneaux solaires et obtenez un rapport d'analyse complet en quelques minutes : scoring technique, financier et fiabilit\u00e9 installateur. \u00c0 partir de 29 \u20ac.",
+    "Uploadez votre devis panneaux solaires et obtenez un rapport d\u2019analyse complet en quelques minutes : scoring technique, financier et fiabilit\u00e9 installateur. \u00c0 partir de 29 \u20ac.",
   keywords: [
     "devis panneaux solaires",
     "analyse devis photovoltaique",
@@ -26,7 +31,13 @@ export const metadata: Metadata = {
     "scoring devis solaire",
     "autoconsommation",
     "prime EDF OA",
+    "arnaque panneaux solaires",
+    "comparateur devis solaire",
+    "prix kWc",
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "DevisPV \u2014 Votre devis solaire est-il au juste prix ?",
     description:
@@ -34,10 +45,12 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     siteName: "DevisPV",
+    url: "https://devis-pv.fr",
   },
   twitter: {
     card: "summary_large_image",
-    title: "DevisPV \u2014 Analysez votre devis photovolta\u00efque par analyse experte",
+    title:
+      "DevisPV \u2014 Analysez votre devis photovolta\u00efque par analyse experte",
     description:
       "Scoring complet de votre devis solaire : technique, financier, fiabilit\u00e9. \u00c0 partir de 29 \u20ac.",
   },

@@ -1,3 +1,12 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Mentions l\u00e9gales",
+  description:
+    "Mentions l\u00e9gales du site DevisPV : \u00e9diteur, h\u00e9bergement, donn\u00e9es personnelles et cookies.",
+  alternates: { canonical: "/mentions-legales" },
+};
+
 export default function MentionsLegales() {
   return (
     <div className="flex flex-1 flex-col">

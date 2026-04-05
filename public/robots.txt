@@ -1,0 +1,10 @@
+# DevisPV - robots.txt
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /paiement/
+Disallow: /resultats
+Disallow: /comparaison
+Disallow: /projet/
+
+Sitemap: https://devis-pv.fr/sitemap.xml

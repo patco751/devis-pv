@@ -1,3 +1,12 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Conditions G\u00e9n\u00e9rales de Vente",
+  description:
+    "CGV de DevisPV : tarifs, paiement, droit de r\u00e9tractation et responsabilit\u00e9.",
+  alternates: { canonical: "/cgv" },
+};
+
 export default function CGV() {
   return (
     <div className="flex flex-1 flex-col">

@@ -1,9 +1,55 @@
 import UploadZone from "@/components/upload-zone";
 import { LogoWithText } from "@/components/logo";
+import {
+  OrganizationJsonLd,
+  FAQPageJsonLd,
+  ProductJsonLd,
+} from "@/components/json-ld";
+
+const faqItems = [
+  {
+    question: "Comment fonctionne l\u2019analyse ?",
+    answer:
+      "Vous uploadez votre devis (PDF ou photo) et notre syst\u00e8me expert en photovolta\u00efque extrait toutes les donn\u00e9es, v\u00e9rifie les prix par rapport au march\u00e9, contr\u00f4le la qualit\u00e9 du mat\u00e9riel et la certification RGE de l\u2019installateur. Vous recevez un rapport complet en moins de 2 minutes.",
+  },
+  {
+    question: "L\u2019analyse est-elle fiable ?",
+    answer:
+      "Notre syst\u00e8me s\u2019appuie sur les r\u00e9f\u00e9rences de prix officielles (photovoltaique.info, CRE, tarifs EDF OA en vigueur) et les normes du secteur. Elle d\u00e9tecte les prix anormalement \u00e9lev\u00e9s, les mat\u00e9riels de mauvaise qualit\u00e9 et les signaux d\u2019arnaque.",
+  },
+  {
+    question: "Mes donn\u00e9es sont-elles prot\u00e9g\u00e9es ?",
+    answer:
+      "Oui. Votre devis est analys\u00e9 en temps r\u00e9el et n\u2019est pas stock\u00e9 sur nos serveurs. Le traitement est effectu\u00e9 de mani\u00e8re s\u00e9curis\u00e9e et les donn\u00e9es sont supprim\u00e9es imm\u00e9diatement apr\u00e8s l\u2019analyse.",
+  },
+  {
+    question: "Pourquoi 29 \u20ac et pas gratuit ?",
+    answer:
+      "L\u2019analyse mobilise un syst\u00e8me avanc\u00e9 sp\u00e9cialis\u00e9 en photovolta\u00efque. Le co\u00fbt couvre le traitement et vous garantit un rapport de qualit\u00e9 professionnelle. C\u2019est bien moins cher qu\u2019un audit expert (200-500 \u20ac) et peut vous faire \u00e9conomiser des milliers d\u2019euros.",
+  },
+  {
+    question: "Que contient le rapport PDF ?",
+    answer:
+      "Le rapport inclut : le scoring global et par axe (technique, financier, fiabilit\u00e9), toutes les donn\u00e9es extraites du devis, une projection financi\u00e8re sur 25 ans (ROI, gains cumul\u00e9s, rendement), et 3 \u00e0 5 recommandations personnalis\u00e9es.",
+  },
+  {
+    question: "Quels types de devis puis-je analyser ?",
+    answer:
+      "Tout devis d\u2019installation photovolta\u00efque r\u00e9sidentielle en France : panneaux solaires en toiture (surimposition ou IAB), sur pergola, carport ou au sol. Autoconsommation avec vente de surplus ou vente totale.",
+  },
+];
 
 export default function Home() {
   return (
     <div className="flex flex-1 flex-col">
+      <OrganizationJsonLd />
+      <ProductJsonLd />
+      <FAQPageJsonLd
+        faqs={faqItems.map((f) => ({
+          question: f.question,
+          answer: f.answer,
+        }))}
+      />
       {/* Header */}
       <header className="border-b border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950">
         <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
@@ -26,6 +72,12 @@ export default function Home() {
               className="text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
             >
               FAQ
+            </a>
+            <a
+              href="/blog"
+              className="text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+            >
+              Blog
             </a>
           </nav>
         </div>
@@ -123,6 +175,27 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* CTA Diagnostic gratuit */}
+      <section className="border-t border-zinc-200 bg-gradient-to-r from-orange-50 to-amber-50 px-6 py-12 dark:from-zinc-900 dark:to-zinc-900">
+        <div className="mx-auto max-w-3xl text-center">
+          <span className="inline-block rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-700 dark:bg-green-900/30 dark:text-green-300">
+            Gratuit
+          </span>
+          <h2 className="mt-3 text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+            {"Pas encore sûr ? Testez le pré-diagnostic gratuit"}
+          </h2>
+          <p className="mt-2 text-zinc-600 dark:text-zinc-400">
+            5 questions rapides pour savoir si votre devis est dans les clous, sans rien payer.
+          </p>
+          <a
+            href="/diagnostic-gratuit"
+            className="mt-4 inline-block rounded-xl border-2 border-green-600 px-6 py-3 text-sm font-semibold text-green-700 hover:bg-green-50 transition-colors dark:text-green-300 dark:hover:bg-green-950/30"
+          >
+            {"Pré-diagnostic gratuit"}
+          </a>
         </div>
       </section>
 
@@ -241,38 +314,13 @@ export default function Home() {
             Questions fréquentes
           </h2>
           <div className="mt-12 space-y-4">
-            {[
-              {
-                q: "Comment fonctionne l'analyse ?",
-                a: "Vous uploadez votre devis (PDF ou photo) et notre système expert en photovoltaïque extrait toutes les données, vérifie les prix par rapport au marché, contrôle la qualité du matériel et la certification RGE de l'installateur. Vous recevez un rapport complet en moins de 2 minutes.",
-              },
-              {
-                q: "L'analyse est-elle fiable ?",
-                a: "Notre système s'appuie sur les références de prix officielles (photovoltaique.info, CRE, tarifs EDF OA en vigueur) et les normes du secteur. Elle détecte les prix anormalement élevés, les matériels de mauvaise qualité et les signaux d'arnaque. Cela ne remplace pas un avis d'expert humain, mais c'est un excellent premier filtre.",
-              },
-              {
-                q: "Mes données sont-elles protégées ?",
-                a: "Oui. Votre devis est analysé en temps réel et n'est pas stocké sur nos serveurs. Le traitement est effectué de manière sécurisée et les données sont supprimées immédiatement après l'analyse.",
-              },
-              {
-                q: "Pourquoi 29 € et pas gratuit ?",
-                a: "L'analyse mobilise un système avancé spécialisé en photovoltaïque. Le coût couvre le traitement et vous garantit un rapport de qualité professionnelle. C'est bien moins cher qu'un audit expert (200-500 €) et peut vous faire économiser des milliers d'euros sur un devis surévalué.",
-              },
-              {
-                q: "Que contient le rapport PDF ?",
-                a: "Le rapport inclut : le scoring global et par axe (technique, financier, fiabilité), toutes les données extraites du devis, une projection financière sur 25 ans (ROI, gains cumulés, rendement), et 3 à 5 recommandations personnalisées.",
-              },
-              {
-                q: "Quels types de devis puis-je analyser ?",
-                a: "Tout devis d'installation photovoltaïque résidentielle en France : panneaux solaires en toiture (surimposition ou IAB), sur pergola, carport ou au sol. Autoconsommation avec vente de surplus ou vente totale.",
-              },
-            ].map((faq) => (
+            {faqItems.map((faq) => (
               <details
-                key={faq.q}
+                key={faq.question}
                 className="group rounded-xl border border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900"
               >
                 <summary className="flex cursor-pointer items-center justify-between px-6 py-4 text-left text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-                  {faq.q}
+                  {faq.question}
                   <svg
                     className="h-5 w-5 shrink-0 text-zinc-400 transition-transform group-open:rotate-180"
                     fill="none"
@@ -284,7 +332,7 @@ export default function Home() {
                   </svg>
                 </summary>
                 <p className="px-6 pb-4 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                  {faq.a}
+                  {faq.answer}
                 </p>
               </details>
             ))}
@@ -307,6 +355,9 @@ export default function Home() {
             </a>
             <a href="/contact" className="hover:text-zinc-900 dark:hover:text-zinc-100">
               Contact
+            </a>
+            <a href="/blog" className="hover:text-zinc-900 dark:hover:text-zinc-100">
+              Blog
             </a>
           </div>
         </div>
