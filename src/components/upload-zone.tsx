@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useRef, useEffect } from "react";
+import { trackFileUpload, trackInitiateCheckout } from "@/lib/tracking";
 
 const ACCEPTED_TYPES = [
   "application/pdf",
@@ -60,6 +61,7 @@ export default function UploadZone() {
       }
       setError(null);
       setFile(f);
+      trackFileUpload();
     },
     [validate]
   );
@@ -103,6 +105,9 @@ export default function UploadZone() {
       // Générer un ID unique pour ce fichier
       const fileId = crypto.randomUUID();
       sessionStorage.setItem(`file-${fileId}`, JSON.stringify(fileData));
+
+      // Track checkout initiation
+      trackInitiateCheckout(selectedPlan, selectedPlan === "project" ? 59 : 29);
 
       // 2. Créer une session Stripe Checkout
       const res = await fetch("/api/checkout", {

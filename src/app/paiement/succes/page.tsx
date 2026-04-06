@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import { createProjectSession, addAnalysisToSession, getProjectSession } from "@/lib/storage";
+import { trackPurchase } from "@/lib/tracking";
 
 const STEPS = [
   { id: "payment", label: "Paiement", desc: "Confirmation Stripe" },
@@ -126,6 +127,10 @@ function SuccesContent() {
         if (!verifyData.paid) {
           throw new Error("Paiement non confirm\é. Veuillez r\éessayer.");
         }
+
+        // Fire conversion events for all ad platforms
+        const purchaseValue = verifyData.planId === "project" ? 59 : 29;
+        trackPurchase(verifyData.planId, purchaseValue);
 
         advanceStep(0); // payment done -> reading
 

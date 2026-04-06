@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { TrackingPixels } from "@/components/tracking-pixels";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -46,6 +47,14 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     siteName: "DevisPV",
     url: "https://devis-pv.fr",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "DevisPV — Analysez votre devis photovoltaïque",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -77,7 +86,10 @@ export default function RootLayout({
       lang="fr"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <TrackingPixels />
+        {children}
+      </body>
     </html>
   );
 }

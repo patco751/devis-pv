@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { LogoWithText } from "@/components/logo";
+import { trackDiagnosticStart, trackDiagnosticComplete } from "@/lib/tracking";
 
 interface QuizState {
   step: number;
@@ -93,12 +94,18 @@ export default function DiagnosticGratuit() {
   const update = (field: keyof QuizState, value: string) =>
     setState((prev) => ({ ...prev, [field]: value }));
 
-  const next = () => setState((prev) => ({ ...prev, step: prev.step + 1 }));
+  const next = () => {
+    setState((prev) => {
+      if (prev.step === 0) trackDiagnosticStart();
+      return { ...prev, step: prev.step + 1 };
+    });
+  };
   const prev = () => setState((prev) => ({ ...prev, step: prev.step - 1 }));
 
   const handleSubmitEmail = async () => {
     setShowResult(true);
     setEmailSent(true);
+    trackDiagnosticComplete(state.email);
 
     if (state.email && state.email.includes("@")) {
       fetch("/api/lead", {
