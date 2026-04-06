@@ -24,7 +24,7 @@ function VerdictBadge({ verdict }: { verdict: string }) {
     EXCELLENT: { label: "Excellent", color: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-400" },
     BON: { label: "Bon", color: "bg-orange-100 text-orange-700 dark:bg-orange-900/40 dark:text-orange-400" },
     MOYEN: { label: "Moyen", color: "bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-400" },
-    A_EVITER: { label: "\u00c0 \u00e9viter", color: "bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-400" },
+    A_EVITER: { label: "\À \éviter", color: "bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-400" },
   };
   const c = config[verdict] ?? config.MOYEN;
 
@@ -38,7 +38,7 @@ function VerdictBadge({ verdict }: { verdict: string }) {
 /** Formate un nombre en euros */
 function fmtEur(val: number | null | undefined): string {
   if (val === null || val === undefined) return "N/A";
-  return `${val.toLocaleString("fr-FR", { maximumFractionDigits: 0 })} \u20ac`;
+  return `${val.toLocaleString("fr-FR", { maximumFractionDigits: 0 })} \€`;
 }
 
 function globalNote(analysis: StoredAnalysis["analysis"]): number {
@@ -126,7 +126,7 @@ export default function ComparaisonPage() {
           S&eacute;lectionnez jusqu&apos;&agrave; 4 devis pour les comparer c&ocirc;te &agrave; c&ocirc;te.
         </p>
 
-        {/* S\u00e9lection des devis */}
+        {/* S\élection des devis */}
         <div className="mt-6 flex flex-wrap gap-2">
           {analyses.map((a) => (
             <button
@@ -220,7 +220,7 @@ export default function ComparaisonPage() {
                     ))}
                   </tr>
 
-                  {/* Fiabilit\u00e9 */}
+                  {/* Fiabilit\é */}
                   <tr>
                     <td className="py-3 pr-4 font-medium text-zinc-700 dark:text-zinc-300">Fiabilit&eacute; (25%)</td>
                     {selectedAnalyses.map((a) => (
@@ -316,13 +316,13 @@ export default function ComparaisonPage() {
                       const isGood = ppw !== null && ppw !== undefined && ppw <= 2.5;
                       return (
                         <td key={a.id} className={`py-3 px-3 text-center font-semibold ${isGood ? "text-emerald-600" : "text-zinc-900 dark:text-zinc-100"}`}>
-                          {ppw ? `${ppw.toFixed(2)} \u20ac/Wc` : "N/A"}
+                          {ppw ? `${ppw.toFixed(2)} \€/Wc` : "N/A"}
                         </td>
                       );
                     })}
                   </tr>
 
-                  {/* Retour annonc\u00e9 */}
+                  {/* Retour annonc\é */}
                   <tr>
                     <td className="py-3 pr-4 text-zinc-600 dark:text-zinc-400">Retour annonc&eacute;</td>
                     {selectedAnalyses.map((a) => (
@@ -356,20 +356,20 @@ export default function ComparaisonPage() {
                       const rge = a.analysis.extraction.installateur.rge_qualification;
                       return (
                         <td key={a.id} className={`py-3 px-3 text-center font-medium ${rge ? "text-emerald-600" : "text-red-500"}`}>
-                          {rge ?? "Non mentionn\u00e9"}
+                          {rge ?? "Non mentionn\é"}
                         </td>
                       );
                     })}
                   </tr>
 
-                  {/* D\u00e9cennale */}
+                  {/* D\écennale */}
                   <tr>
                     <td className="py-3 pr-4 text-zinc-600 dark:text-zinc-400">D&eacute;cennale</td>
                     {selectedAnalyses.map((a) => {
                       const dec = a.analysis.extraction.installateur.assurance_decennale;
                       return (
                         <td key={a.id} className={`py-3 px-3 text-center font-medium ${dec ? "text-emerald-600" : "text-red-500"}`}>
-                          {dec === true ? "Oui" : dec === false ? "Non" : "Non mentionn\u00e9"}
+                          {dec === true ? "Oui" : dec === false ? "Non" : "Non mentionn\é"}
                         </td>
                       );
                     })}

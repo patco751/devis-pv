@@ -33,7 +33,7 @@ export default function ProjetAnalyserPage() {
 
   const validate = useCallback((f: File): string | null => {
     if (!ACCEPTED_TYPES.includes(f.type)) {
-      return "Format non support\u00e9. Envoyez un PDF, JPG, PNG ou WebP.";
+      return "Format non support\é. Envoyez un PDF, JPG, PNG ou WebP.";
     }
     if (f.size > MAX_SIZE_BYTES) {
       return `Fichier trop volumineux (max ${MAX_SIZE_MB} Mo).`;
@@ -106,7 +106,7 @@ export default function ProjetAnalyserPage() {
 
       setStep("done");
 
-      // Rediriger vers les r\u00e9sultats
+      // Rediriger vers les r\ésultats
       await new Promise((r) => setTimeout(r, 500));
       router.push(`/resultats?id=${stored.id}`);
     } catch (err) {
@@ -238,7 +238,7 @@ export default function ProjetAnalyserPage() {
               </p>
             </div>
 
-            {/* Fichier s\u00e9lectionn\u00e9 */}
+            {/* Fichier s\électionn\é */}
             {file && (
               <div className="mt-4 flex items-center justify-between rounded-xl border border-zinc-200 bg-white px-4 py-3 dark:border-zinc-700 dark:bg-zinc-900">
                 <div className="flex items-center gap-3 min-w-0">

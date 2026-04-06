@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { blogPosts } from "@/lib/blog-data";
+import { cities } from "@/lib/cities-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://devis-pv.fr";
@@ -50,5 +51,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...blogPages];
+  const cityPages: MetadataRoute.Sitemap = cities.map((city) => ({
+    url: `${baseUrl}/devis-panneaux-solaires-${city.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  const parrainage: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/parrainage`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.5,
+    },
+  ];
+
+  return [...staticPages, ...blogPages, ...cityPages, ...parrainage];
 }

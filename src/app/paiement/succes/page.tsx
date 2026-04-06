@@ -9,7 +9,7 @@ const STEPS = [
   { id: "payment", label: "Paiement", desc: "Confirmation Stripe" },
   { id: "reading", label: "Lecture", desc: "Extraction du devis" },
   { id: "analysis", label: "Analyse", desc: "Scoring expert" },
-  { id: "report", label: "Rapport", desc: "G\u00e9n\u00e9ration du rapport" },
+  { id: "report", label: "Rapport", desc: "G\én\ération du rapport" },
 ] as const;
 
 type StepStatus = "pending" | "active" | "done" | "error";
@@ -124,7 +124,7 @@ function SuccesContent() {
         const verifyData = await verifyRes.json();
 
         if (!verifyData.paid) {
-          throw new Error("Paiement non confirm\u00e9. Veuillez r\u00e9essayer.");
+          throw new Error("Paiement non confirm\é. Veuillez r\éessayer.");
         }
 
         advanceStep(0); // payment done -> reading
@@ -134,7 +134,7 @@ function SuccesContent() {
         const fileRaw = sessionStorage.getItem(`file-${fileId}`);
 
         if (!fileRaw) {
-          throw new Error("Fichier introuvable. Il a peut-\u00eatre expir\u00e9. Veuillez refaire l'upload.");
+          throw new Error("Fichier introuvable. Il a peut-\être expir\é. Veuillez refaire l'upload.");
         }
 
         const fileData = JSON.parse(fileRaw);
@@ -250,7 +250,7 @@ function SuccesContent() {
           {isError
             ? "Une erreur est survenue"
             : allDone
-            ? "Analyse termin\u00e9e !"
+            ? "Analyse termin\ée !"
             : "Analyse de votre devis"}
         </h1>
         <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
@@ -270,7 +270,7 @@ function SuccesContent() {
             onClick={() => router.push("/")}
             className="mt-8 rounded-xl bg-primary px-8 py-3 text-sm font-semibold text-white hover:bg-primary-hover shadow-lg shadow-orange-500/25 transition-all"
           >
-            Retour \u00e0 l&apos;accueil
+            Retour \à l&apos;accueil
           </button>
         )}
       </div>

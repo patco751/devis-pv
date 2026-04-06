@@ -12,7 +12,7 @@ const VERDICT_LABELS: Record<string, string> = {
 
 /** Formate un nombre en euros pour le PDF (ex: 13 476,60 EUR) — sans caractères spéciaux */
 function fmtEur(val: number | null | undefined): string {
-  if (val === null || val === undefined) return "Non mentionn\u00E9";
+  if (val === null || val === undefined) return "Non mentionn\é";
   // Formater manuellement pour éviter les problèmes d'encodage jsPDF
   const parts = val.toFixed(2).split(".");
   const intPart = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
@@ -51,10 +51,10 @@ export function generatePDF(data: AnalyseDevis): jsPDF {
 
   doc.setFontSize(12);
   doc.setFont("helvetica", "normal");
-  doc.text("Rapport d'analyse de devis photovolta\u00EFque", margin, 28);
+  doc.text("Rapport d'analyse de devis photovolta\ïque", margin, 28);
 
   doc.setFontSize(9);
-  doc.text(`G\u00E9n\u00E9r\u00E9 le ${new Date().toLocaleDateString("fr-FR")}`, margin, 35);
+  doc.text(`G\én\ér\é le ${new Date().toLocaleDateString("fr-FR")}`, margin, 35);
 
   y = 50;
 
@@ -66,7 +66,7 @@ export function generatePDF(data: AnalyseDevis): jsPDF {
 
   y += 10;
   const verdict = VERDICT_LABELS[data.scoring.verdict] ?? "N/A";
-  // Calculer le score global de fa\u00E7on identique \u00E0 la page r\u00E9sultats
+  // Calculer le score global de fa\çon identique \à la page r\ésultats
   const scoreGlobal = (data.scoring.technique.note * 35 + data.scoring.financier.note * 40 + data.scoring.fiabilite_installateur.note * 25) / 100;
   doc.setFontSize(36);
   doc.text(`${scoreGlobal.toFixed(1)}/10`, margin, y + 5);
@@ -82,7 +82,7 @@ export function generatePDF(data: AnalyseDevis): jsPDF {
   // --- Scores détaillés ---
   doc.setFontSize(14);
   doc.setFont("helvetica", "bold");
-  doc.text("Scoring d\u00E9taill\u00E9", margin, y);
+  doc.text("Scoring d\étaill\é", margin, y);
   y += 5;
 
   autoTable(doc, {
@@ -103,7 +103,7 @@ export function generatePDF(data: AnalyseDevis): jsPDF {
         data.scoring.financier.commentaire,
       ],
       [
-        "Fiabilit\u00E9 installateur",
+        "Fiabilit\é installateur",
         `${data.scoring.fiabilite_installateur.note.toFixed(1)}/10`,
         "25%",
         data.scoring.fiabilite_installateur.commentaire,
@@ -130,7 +130,7 @@ export function generatePDF(data: AnalyseDevis): jsPDF {
   // --- Données extraites : Installation ---
   doc.setFontSize(14);
   doc.setFont("helvetica", "bold");
-  doc.text("Donn\u00E9es extraites \u2014 Installation", margin, y);
+  doc.text("Donn\ées extraites \— Installation", margin, y);
   y += 5;
 
   const inst = data.extraction.installation;
@@ -138,13 +138,13 @@ export function generatePDF(data: AnalyseDevis): jsPDF {
     startY: y,
     margin: { left: margin, right: margin },
     body: [
-      ["Puissance", inst.puissance_kwc ? `${inst.puissance_kwc} kWc` : "Non mentionn\u00E9"],
-      ["Panneaux", inst.nombre_panneaux ? `${inst.nombre_panneaux}x ${inst.marque_panneaux ?? ""} ${inst.modele_panneaux ?? ""}`.trim() : "Non mentionn\u00E9"],
-      ["Technologie", inst.technologie ?? "Non mentionn\u00E9"],
-      ["Onduleur", inst.onduleur_marque ? `${inst.onduleur_marque} ${inst.onduleur_modele ?? ""}`.trim() : "Non mentionn\u00E9"],
-      ["Type de pose", inst.type_pose ?? "Non mentionn\u00E9"],
-      ["Production estim\u00E9e", inst.production_estimee_kwh ? `${inst.production_estimee_kwh.toLocaleString("en-US").replace(/,/g, " ")} kWh/an` : "Non mentionn\u00E9"],
-      ["Valorisation", inst.mode_valorisation ?? "Non mentionn\u00E9"],
+      ["Puissance", inst.puissance_kwc ? `${inst.puissance_kwc} kWc` : "Non mentionn\é"],
+      ["Panneaux", inst.nombre_panneaux ? `${inst.nombre_panneaux}x ${inst.marque_panneaux ?? ""} ${inst.modele_panneaux ?? ""}`.trim() : "Non mentionn\é"],
+      ["Technologie", inst.technologie ?? "Non mentionn\é"],
+      ["Onduleur", inst.onduleur_marque ? `${inst.onduleur_marque} ${inst.onduleur_modele ?? ""}`.trim() : "Non mentionn\é"],
+      ["Type de pose", inst.type_pose ?? "Non mentionn\é"],
+      ["Production estim\ée", inst.production_estimee_kwh ? `${inst.production_estimee_kwh.toLocaleString("en-US").replace(/,/g, " ")} kWh/an` : "Non mentionn\é"],
+      ["Valorisation", inst.mode_valorisation ?? "Non mentionn\é"],
     ],
     bodyStyles: { fontSize: 8, font: "helvetica", cellPadding: 2 },
     columnStyles: {
@@ -165,7 +165,7 @@ export function generatePDF(data: AnalyseDevis): jsPDF {
 
   doc.setFontSize(14);
   doc.setFont("helvetica", "bold");
-  doc.text("Donn\u00E9es extraites \u2014 Financier", margin, y);
+  doc.text("Donn\ées extraites \— Financier", margin, y);
   y += 5;
 
   const fin = data.extraction.financier;
@@ -175,11 +175,11 @@ export function generatePDF(data: AnalyseDevis): jsPDF {
     body: [
       ["Prix HT", fmtEur(fin.prix_ht)],
       ["Prix TTC", fmtEur(fin.prix_ttc)],
-      ["Prix/Wc", fin.prix_par_wc ? `${fin.prix_par_wc.toFixed(2)} EUR/Wc` : "Non mentionn\u00E9"],
-      ["TVA", fin.tva_pourcent ? `${fin.tva_pourcent}%` : "Non mentionn\u00E9"],
-      ["Prime autoconsommation", fin.prime_autoconsommation ?? "Non mentionn\u00E9"],
-      ["Financement", fin.financement ?? "Non mentionn\u00E9"],
-      ["Retour annonc\u00E9", fin.temps_retour_annonce ?? "Non mentionn\u00E9"],
+      ["Prix/Wc", fin.prix_par_wc ? `${fin.prix_par_wc.toFixed(2)} EUR/Wc` : "Non mentionn\é"],
+      ["TVA", fin.tva_pourcent ? `${fin.tva_pourcent}%` : "Non mentionn\é"],
+      ["Prime autoconsommation", fin.prime_autoconsommation ?? "Non mentionn\é"],
+      ["Financement", fin.financement ?? "Non mentionn\é"],
+      ["Retour annonc\é", fin.temps_retour_annonce ?? "Non mentionn\é"],
     ],
     bodyStyles: { fontSize: 8, font: "helvetica", cellPadding: 2 },
     columnStyles: {
@@ -200,7 +200,7 @@ export function generatePDF(data: AnalyseDevis): jsPDF {
 
   doc.setFontSize(14);
   doc.setFont("helvetica", "bold");
-  doc.text("Donn\u00E9es extraites \u2014 Installateur", margin, y);
+  doc.text("Donn\ées extraites \— Installateur", margin, y);
   y += 5;
 
   const inst2 = data.extraction.installateur;
@@ -208,13 +208,13 @@ export function generatePDF(data: AnalyseDevis): jsPDF {
     startY: y,
     margin: { left: margin, right: margin },
     body: [
-      ["Raison sociale", inst2.raison_sociale ?? "Non mentionn\u00E9"],
-      ["SIRET", inst2.siret ?? "Non mentionn\u00E9"],
-      ["RGE", inst2.rge_qualification ?? "Non mentionn\u00E9"],
-      ["Assurance d\u00E9cennale", inst2.assurance_decennale === true ? "Oui" : inst2.assurance_decennale === false ? "Non" : "Non mentionn\u00E9"],
-      ["Garantie panneaux", inst2.garantie_panneaux_ans ? `${inst2.garantie_panneaux_ans} ans` : "Non mentionn\u00E9"],
-      ["Garantie onduleur", inst2.garantie_onduleur_ans ? `${inst2.garantie_onduleur_ans} ans` : "Non mentionn\u00E9"],
-      ["Garantie installation", inst2.garantie_installation_ans ? `${inst2.garantie_installation_ans} ans` : "Non mentionn\u00E9"],
+      ["Raison sociale", inst2.raison_sociale ?? "Non mentionn\é"],
+      ["SIRET", inst2.siret ?? "Non mentionn\é"],
+      ["RGE", inst2.rge_qualification ?? "Non mentionn\é"],
+      ["Assurance d\écennale", inst2.assurance_decennale === true ? "Oui" : inst2.assurance_decennale === false ? "Non" : "Non mentionn\é"],
+      ["Garantie panneaux", inst2.garantie_panneaux_ans ? `${inst2.garantie_panneaux_ans} ans` : "Non mentionn\é"],
+      ["Garantie onduleur", inst2.garantie_onduleur_ans ? `${inst2.garantie_onduleur_ans} ans` : "Non mentionn\é"],
+      ["Garantie installation", inst2.garantie_installation_ans ? `${inst2.garantie_installation_ans} ans` : "Non mentionn\é"],
     ],
     bodyStyles: { fontSize: 8, font: "helvetica", cellPadding: 2 },
     columnStyles: {
@@ -304,15 +304,15 @@ export function generatePDF(data: AnalyseDevis): jsPDF {
     doc.setTextColor(255, 255, 255);
     doc.setFontSize(14);
     doc.setFont("helvetica", "bold");
-    doc.text("Projection financi\u00E8re sur 25 ans", margin, y + 3);
+    doc.text("Projection financi\ère sur 25 ans", margin, y + 3);
     y += 15;
 
     // KPIs en ligne
     doc.setTextColor(0, 0, 0);
     const kpis = [
-      { label: "Investissement net", value: fmtEur(coutNet), sub: `apr\u00E8s prime de ${fmtEur(primeTotal)}` },
+      { label: "Investissement net", value: fmtEur(coutNet), sub: `apr\ès prime de ${fmtEur(primeTotal)}` },
       { label: "Retour sur invest.", value: anneeRetour ? `${anneeRetour} ans` : "N/A", sub: "temps de retour" },
-      { label: "Gains sur 25 ans", value: fmtEur(gainTotal), sub: "\u00E9conomies + revente" },
+      { label: "Gains sur 25 ans", value: fmtEur(gainTotal), sub: "\économies + revente" },
       { label: "Rendement total", value: `${rendement}%`, sub: "sur 25 ans" },
     ];
 
@@ -345,7 +345,7 @@ export function generatePDF(data: AnalyseDevis): jsPDF {
     doc.setTextColor(0, 0, 0);
     doc.setFontSize(11);
     doc.setFont("helvetica", "bold");
-    doc.text("D\u00E9tail ann\u00E9e par ann\u00E9e", margin, y);
+    doc.text("D\étail ann\ée par ann\ée", margin, y);
     y += 4;
 
     const tableRows = rows
@@ -355,7 +355,7 @@ export function generatePDF(data: AnalyseDevis): jsPDF {
         `${r.prod.toLocaleString("en-US").replace(/,/g, " ")} kWh`,
         `${r.eco} EUR`,
         `${r.rev} EUR`,
-        r.prime > 0 ? `+${r.prime} EUR` : "\u2014",
+        r.prime > 0 ? `+${r.prime} EUR` : "\—",
         `-${r.opex} EUR`,
         `${r.net} EUR`,
         `${r.cumul.toLocaleString("en-US").replace(/,/g, " ")} EUR`,
@@ -364,7 +364,7 @@ export function generatePDF(data: AnalyseDevis): jsPDF {
     autoTable(doc, {
       startY: y,
       margin: { left: margin, right: margin },
-      head: [["Ann\u00E9e", "Production", "\u00C9conomies", "Revente", "Prime", "OPEX", "Gain net", "Cumul"]],
+      head: [["Ann\ée", "Production", "\Économies", "Revente", "Prime", "OPEX", "Gain net", "Cumul"]],
       body: tableRows,
       headStyles: { fillColor: primaryRGB, fontSize: 7, font: "helvetica", halign: "center" },
       bodyStyles: { fontSize: 7, font: "helvetica", cellPadding: 1.5, halign: "right" },
@@ -392,7 +392,7 @@ export function generatePDF(data: AnalyseDevis): jsPDF {
     doc.setFontSize(6.5);
     doc.setFont("helvetica", "italic");
     doc.setTextColor(150, 150, 150);
-    const hyp = `Hypoth\u00E8ses : autoconsommation 45%, prix \u00E9lectricit\u00E9 0,2516 EUR/kWh (+4%/an), tarif rachat EDF OA ${(tarifRachat * 100).toFixed(2)} c/kWh (contrat 20 ans), d\u00E9gradation 0,5%/an, OPEX ~1%/an, remplacement onduleur an 13, prime vers\u00E9e sur 5 ans.`;
+    const hyp = `Hypoth\èses : autoconsommation 45%, prix \électricit\é 0,2516 EUR/kWh (+4%/an), tarif rachat EDF OA ${(tarifRachat * 100).toFixed(2)} c/kWh (contrat 20 ans), d\égradation 0,5%/an, OPEX ~1%/an, remplacement onduleur an 13, prime vers\ée sur 5 ans.`;
     const hypLines = doc.splitTextToSize(hyp, pageWidth - margin * 2);
     doc.text(hypLines, margin, y);
   }
