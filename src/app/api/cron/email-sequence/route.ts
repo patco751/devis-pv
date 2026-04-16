@@ -70,14 +70,8 @@ export async function GET(request: NextRequest) {
   }
   const { data: contacts } = (await listRes.json()) as { data: Contact[] };
 
-  // Which day offsets trigger which email
-  const SCHEDULE: Record<number, number> = {
-    0: 0, // J+0 → email 1
-    1: 1, // J+1 → email 2
-    3: 2, // J+3 → email 3
-    6: 3, // J+6 → email 4
-    10: 4, // J+10 → email 5
-  };
+  // Day offset that triggers each step (index = step number)
+  const TRIGGERS = [0, 1, 3, 6, 10];
 
   const results = { sent: 0, skipped: 0, failed: 0 };
 
@@ -87,13 +81,18 @@ export async function GET(request: NextRequest) {
       continue;
     }
     const elapsed = daysSince(c.created_at);
-    const stepIdx = SCHEDULE[elapsed];
-    if (stepIdx === undefined) {
-      results.skipped++;
-      continue;
+    // Send every step whose trigger day has already passed. Resend's
+    // Idempotency-Key (seq-{contactId}-{stepIdx}) prevents duplicate sends
+    // on subsequent runs, so this also backfills leads that joined before
+    // the cron was live.
+    let anySent = false;
+    for (let stepIdx = 0; stepIdx < TRIGGERS.length; stepIdx++) {
+      if (TRIGGERS[stepIdx] > elapsed) break;
+      const ok = await sendEmail(apiKey, c.email, c.first_name || "", stepIdx, c.id);
+      ok ? results.sent++ : results.failed++;
+      anySent = true;
     }
-    const ok = await sendEmail(apiKey, c.email, c.first_name || "", stepIdx, c.id);
-    ok ? results.sent++ : results.failed++;
+    if (!anySent) results.skipped++;
   }
 
   return Response.json({ success: true, ...results, scanned: contacts.length });
