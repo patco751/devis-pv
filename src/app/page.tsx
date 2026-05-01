@@ -80,6 +80,12 @@ export default function Home() {
             >
               Blog
             </a>
+            <a
+              href="/simulateur-panneau-solaire"
+              className="hidden sm:inline-block rounded-lg bg-primary px-3 py-1.5 text-sm font-semibold text-white hover:bg-primary-hover transition-colors"
+            >
+              Simulateur gratuit
+            </a>
           </nav>
         </div>
       </header>

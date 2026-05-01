@@ -412,13 +412,13 @@ export default function DiagnosticGratuit() {
                 </p>
                 <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:justify-center">
                   <a
-                    href="/#single"
+                    href="/#upload"
                     className="rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-primary-hover transition-colors"
                   >
                     Analyse complète — 29 €
                   </a>
                   <a
-                    href="/#project"
+                    href="/#upload"
                     className="rounded-xl border-2 border-primary px-6 py-3 text-sm font-semibold text-primary hover:bg-orange-50 transition-colors"
                   >
                     Projet complet — 59 €
