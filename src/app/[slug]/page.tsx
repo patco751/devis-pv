@@ -3,33 +3,39 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { LogoWithText } from "@/components/logo";
 
+const PREFIX = "devis-panneaux-solaires-";
+
+export const dynamicParams = false;
+
 export function generateStaticParams() {
-  return cities.map((city) => ({ city: city.slug }));
+  return cities.map((city) => ({ slug: `${PREFIX}${city.slug}` }));
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ city: string }>;
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const { city: slug } = await params;
-  const city = getCity(slug);
+  const { slug } = await params;
+  const citySlug = slug.startsWith(PREFIX) ? slug.slice(PREFIX.length) : slug;
+  const city = getCity(citySlug);
   if (!city) return {};
 
   return {
     title: `Devis panneaux solaires ${city.name} — Analyse et vérification`,
     description: `Faites analyser votre devis photovoltaïque à ${city.name} (${city.department}). Vérification du prix, du matériel et de l'installateur. Résultat en 2 minutes.`,
-    alternates: { canonical: `/devis-panneaux-solaires-${city.slug}` },
+    alternates: { canonical: `/${PREFIX}${city.slug}` },
   };
 }
 
 export default async function CityPage({
   params,
 }: {
-  params: Promise<{ city: string }>;
+  params: Promise<{ slug: string }>;
 }) {
-  const { city: slug } = await params;
-  const city = getCity(slug);
+  const { slug } = await params;
+  const citySlug = slug.startsWith(PREFIX) ? slug.slice(PREFIX.length) : slug;
+  const city = getCity(citySlug);
   if (!city) notFound();
 
   const priceRange3 = { min: 8500, max: 10500 };
@@ -77,7 +83,6 @@ export default async function CityPage({
         </header>
 
         <article className="mx-auto max-w-3xl px-6 py-16">
-          {/* Breadcrumb */}
           <nav className="mb-8 text-sm text-zinc-500">
             <a href="/" className="hover:text-primary">Accueil</a>
             <span className="mx-2">/</span>
@@ -91,10 +96,9 @@ export default async function CityPage({
           <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
             Vous avez reçu un devis pour une installation photovoltaïque à {city.name} ({city.department}) ?
             Avant de signer, faites-le analyser par notre système expert pour vous assurer que le prix, le matériel
-            et l'installateur sont conformes au marché en {city.region}.
+            et l{"'"}installateur sont conformes au marché en {city.region}.
           </p>
 
-          {/* CTA */}
           <div className="mt-8 rounded-2xl border-2 border-primary bg-orange-50 p-6 text-center dark:bg-orange-950/20">
             <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-50">
               Faites analyser votre devis maintenant
@@ -110,7 +114,6 @@ export default async function CityPage({
             </a>
           </div>
 
-          {/* Local data */}
           <h2 className="mt-12 text-2xl font-bold text-zinc-900 dark:text-zinc-50">
             Le solaire à {city.name} en chiffres
           </h2>
@@ -130,7 +133,6 @@ export default async function CityPage({
             </div>
           </div>
 
-          {/* Prix */}
           <h2 className="mt-12 text-2xl font-bold text-zinc-900 dark:text-zinc-50">
             Prix des panneaux solaires à {city.name} en 2026
           </h2>
@@ -165,12 +167,11 @@ export default async function CityPage({
           </div>
 
           <p className="mt-4 text-sm text-zinc-500">
-            Ces prix incluent les panneaux, l'onduleur, la pose, le raccordement Enedis et la mise en service.
-            Avec {city.sunHours} heures d'ensoleillement par an, {city.name} offre un bon potentiel solaire
+            Ces prix incluent les panneaux, l{"'"}onduleur, la pose, le raccordement Enedis et la mise en service.
+            Avec {city.sunHours} heures d{"'"}ensoleillement par an, {city.name} offre un bon potentiel solaire
             {city.sunHours >= 2000 ? ", supérieur à la moyenne nationale" : ""}.
           </p>
 
-          {/* What we check */}
           <h2 className="mt-12 text-2xl font-bold text-zinc-900 dark:text-zinc-50">
             Ce que nous vérifions dans votre devis
           </h2>
@@ -193,13 +194,12 @@ export default async function CityPage({
             ))}
           </ul>
 
-          {/* Bottom CTA */}
           <div className="mt-12 rounded-2xl border-2 border-primary bg-orange-50 p-6 text-center dark:bg-orange-950/20">
             <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-50">
               Ne signez pas sans vérifier
             </h2>
             <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-              Un devis mal calibré peut vous coûter des milliers d'euros.
+              Un devis mal calibré peut vous coûter des milliers d{"'"}euros.
               Faites le bon choix pour votre installation à {city.name}.
             </p>
             <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:justify-center">
@@ -218,7 +218,6 @@ export default async function CityPage({
             </div>
           </div>
 
-          {/* Internal links to other cities */}
           <div className="mt-12">
             <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-50">
               Autres villes

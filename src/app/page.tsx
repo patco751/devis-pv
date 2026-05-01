@@ -1,4 +1,5 @@
 import UploadZone from "@/components/upload-zone";
+import EmailCapture from "@/components/email-capture";
 import { LogoWithText } from "@/components/logo";
 import {
   OrganizationJsonLd,
@@ -127,6 +128,24 @@ export default function Home() {
             </svg>
             <span>Résultat en <strong className="text-zinc-900 dark:text-zinc-100">moins de 2 min</strong></span>
           </div>
+        </div>
+      </section>
+
+      {/* Email capture — lead magnet */}
+      <section className="border-t border-zinc-200 bg-gradient-to-b from-white to-orange-50/30 px-6 py-12 dark:from-zinc-950 dark:to-zinc-900">
+        <div className="mx-auto max-w-xl text-center">
+          <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-50">
+            Recevez notre checklist gratuite
+          </h2>
+          <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
+            Les 7 points à vérifier avant de signer un devis solaire — par email, gratuitement.
+          </p>
+          <div className="mt-4">
+            <EmailCapture />
+          </div>
+          <p className="mt-2 text-xs text-zinc-400 dark:text-zinc-500">
+            Pas de spam. Désinscription en 1 clic.
+          </p>
         </div>
       </section>
 
@@ -274,7 +293,7 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <a href="#single" className="mt-8 block w-full rounded-xl border-2 border-primary py-3 text-sm font-semibold text-primary hover:bg-orange-50 transition-colors dark:hover:bg-orange-950/30 text-center">
+              <a href="#upload" className="mt-8 block w-full rounded-xl border-2 border-primary py-3 text-sm font-semibold text-primary hover:bg-orange-50 transition-colors dark:hover:bg-orange-950/30 text-center">
                 Choisir ce forfait
               </a>
             </div>
@@ -320,7 +339,7 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <a href="#project" className="mt-8 block w-full rounded-xl bg-primary py-3 text-sm font-semibold text-white hover:bg-primary-hover shadow-lg shadow-orange-500/25 transition-all text-center">
+              <a href="#upload" className="mt-8 block w-full rounded-xl bg-primary py-3 text-sm font-semibold text-white hover:bg-primary-hover shadow-lg shadow-orange-500/25 transition-all text-center">
                 Choisir ce forfait
               </a>
             </div>

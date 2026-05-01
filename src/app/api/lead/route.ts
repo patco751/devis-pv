@@ -37,7 +37,8 @@ export async function POST(request: NextRequest) {
       });
     }
 
-    // Send notification email to admin
+    const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
     await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -51,9 +52,9 @@ export async function POST(request: NextRequest) {
         html: `
           <div style="font-family: sans-serif; max-width: 500px;">
             <h2 style="color: #ea580c;">Nouveau prospect</h2>
-            <p><strong>Email :</strong> ${email}</p>
-            <p><strong>Source :</strong> ${source}</p>
-            ${data ? `<p><strong>Détails :</strong> ${JSON.stringify(data)}</p>` : ""}
+            <p><strong>Email :</strong> ${esc(email)}</p>
+            <p><strong>Source :</strong> ${esc(source)}</p>
+            ${data ? `<p><strong>Détails :</strong> ${esc(JSON.stringify(data))}</p>` : ""}
           </div>
         `,
       }),
