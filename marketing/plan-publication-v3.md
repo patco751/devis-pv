@@ -1,7 +1,7 @@
 # Plan de Publication DevisPV — V3 (mai-juin 2026)
 
-**Démarrage** : lundi 5 mai 2026
-**Durée** : 30 jours (5 mai – 3 juin)
+**Démarrage** : jeudi 8 mai 2026
+**Durée** : 27 jours (8 mai – 3 juin)
 **Fréquence** : quotidienne sur FB + IG, 3x/semaine TikTok + Reddit
 **Tarifs** : T2 2026 (CRE, mai 2026)
 
@@ -67,38 +67,35 @@ Rejoins 5-10 groupes solaire/rénovation. Chaque jour, commente 2-3 posts avec l
 
 ## CALENDRIER MENSUEL
 
-| Jour | FB Page | Instagram | TikTok | Reddit |
-|------|---------|-----------|--------|--------|
-| Lun 05/05 | Prix 2026 | Prix 2026 | Hook "devis 25 000 €" | — |
-| Mar 06/05 | 3 signaux arnaque | 3 signaux arnaque | — | — |
-| Mer 07/05 | Calcul €/kWc | Tuto €/kWc | Script "5 phrases" | r/france: 150 devis |
-| Jeu 08/05 | Simulateur gratuit | Simulateur gratuit | — | — |
-| Ven 09/05 | Cas réel 28 000 € | Cas réel | Script "devis dissection" | r/vosfinances: ROI |
-| Sam 10/05 | Aides 2026 | Aides 2026 | — | — |
-| Dim 11/05 | CTA analyse | CTA diagnostic | — | r/immobilier: valeur |
-| Lun 12/05 | RGE vérification | RGE en 30 sec | Script "RGE en 30s" | — |
-| Mar 13/05 | Crédit piège | Crédit intégré | — | — |
-| Mer 14/05 | Autocons. vs surplus | Autocons. vs surplus | Script "vente totale morte" | r/ecologie: bilan |
-| Jeu 15/05 | TVA 5,5 % | TVA 5,5 % | — | — |
-| Ven 16/05 | Comparatif 29€ vs 500€ | Comparatif | Script "audit 29€" | r/france: crédit solaire |
-| Sam 17/05 | Témoignage #1 | Témoignage #1 | — | — |
-| Dim 18/05 | Checklist 7 points | Checklist | — | r/vosfinances: checklist |
-| Lun 19/05 | Stat 62% surévalués | Stat 62% | Script "62% des devis" | — |
-| Mar 20/05 | Cas réel Nantes | Cas réel | — | — |
-| Mer 21/05 | Projection 25 ans | Projection 25 ans | Script "rentable ou pas" | r/immobilier: revente |
-| Jeu 22/05 | FAQ top 5 | FAQ top 5 | — | — |
-| Ven 23/05 | Marque panneaux Tier 1 | Tier 1 ou rien | Script "marque introuvable" | r/ecologie: qualité |
-| Sam 24/05 | Onduleur garantie | Onduleur | — | — |
-| Dim 25/05 | Mi-parcours bilan | Mi-parcours | — | r/france: bilan solaire |
-| Lun 26/05 | Été = meilleur moment | Urgence été | Script "installer avant l'été" | — |
-| Mar 27/05 | Parrainage | Parrainage | — | — |
-| Mer 28/05 | Erreurs orientation | Orientation toit | Script "plein sud ou pas" | r/vosfinances: été |
-| Jeu 29/05 | Raccordement Enedis | Raccordement | — | — |
-| Ven 30/05 | Code promo | Code promo | Script "analyse gratuite" | r/immobilier: PV |
-| Sam 31/05 | Témoignage #2 | Témoignage #2 | — | — |
-| Dim 01/06 | Récap du mois | Récap | — | r/france: retour expé |
-| Lun 02/06 | Plan été solaire | Plan été | Script "bilan 1 mois" | — |
-| Mar 03/06 | CTA final + merci | CTA final | — | — |
+| Jour | # | FB Page | Instagram | TikTok | Reddit |
+|------|---|---------|-----------|--------|--------|
+| Jeu 08/05 | 1 | Simulateur gratuit | Simulateur gratuit | — | — |
+| Ven 09/05 | 2 | Cas réel 28 000 € | Cas réel | Script "devis dissection" | r/vosfinances: ROI |
+| Sam 10/05 | 3 | Aides 2026 | Aides 2026 | — | — |
+| Dim 11/05 | 4 | CTA analyse | CTA diagnostic | — | r/immobilier: valeur |
+| Lun 12/05 | 5 | RGE vérification | RGE en 30 sec | Script "RGE en 30s" | — |
+| Mar 13/05 | 6 | Crédit piège | Crédit intégré | — | — |
+| Mer 14/05 | 7 | Autocons. vs surplus | Autocons. vs surplus | Script "vente totale morte" | r/ecologie: bilan |
+| Jeu 15/05 | 8 | TVA 5,5 % | TVA 5,5 % | — | — |
+| Ven 16/05 | 9 | Comparatif 29€ vs 500€ | Comparatif | Script "audit 29€" | r/france: crédit solaire |
+| Sam 17/05 | 10 | Témoignage #1 | Témoignage #1 | — | — |
+| Dim 18/05 | 11 | Checklist 7 points | Checklist | — | r/vosfinances: checklist |
+| Lun 19/05 | 12 | Stat 62% surévalués | Stat 62% | Script "62% des devis" | — |
+| Mar 20/05 | 13 | Cas réel Nantes | Cas réel | — | — |
+| Mer 21/05 | 14 | Projection 25 ans | Projection 25 ans | Script "rentable ou pas" | r/immobilier: revente |
+| Jeu 22/05 | 15 | FAQ top 5 | FAQ top 5 | — | — |
+| Ven 23/05 | 16 | Marque panneaux Tier 1 | Tier 1 ou rien | Script "marque introuvable" | r/ecologie: qualité |
+| Sam 24/05 | 17 | Onduleur garantie | Onduleur | — | — |
+| Dim 25/05 | 18 | Mi-parcours bilan | Mi-parcours | — | r/france: bilan solaire |
+| Lun 26/05 | 19 | Été = meilleur moment | Urgence été | Script "installer avant l'été" | — |
+| Mar 27/05 | 20 | Parrainage | Parrainage | — | — |
+| Mer 28/05 | 21 | Erreurs orientation | Orientation toit | Script "plein sud ou pas" | r/vosfinances: été |
+| Jeu 29/05 | 22 | Raccordement Enedis | Raccordement | — | — |
+| Ven 30/05 | 23 | Code promo | Code promo | Script "analyse gratuite" | r/immobilier: PV |
+| Sam 31/05 | 24 | Témoignage #2 | Témoignage #2 | — | — |
+| Dim 01/06 | 25 | Récap du mois | Récap | — | r/france: retour expé |
+| Lun 02/06 | 26 | Plan été solaire | Plan été | Script "bilan 1 mois" | — |
+| Mar 03/06 | 27 | CTA final + merci | CTA final | — | — |
 
 ---
 
@@ -106,199 +103,11 @@ Rejoins 5-10 groupes solaire/rénovation. Chaque jour, commente 2-3 posts avec l
 
 ---
 
-### SEMAINE 1 — LANCEMENT (5-11 mai)
+### SEMAINE 1 — LANCEMENT (8-11 mai)
 
 ---
 
-#### Jour 1 — Lundi 5 mai
-
-**FB Page** (9h) :
-```
-Votre devis panneaux solaires est-il au bon prix ?
-
-En mai 2026, voici les prix de référence marché pour une installation complète en surimposition (TTC, pose + raccordement, installateur RGE, TVA 5,5 %) :
-
-3 kWc : 6 500 – 8 000 €
-6 kWc : 12 000 – 13 500 €
-9 kWc : 16 000 – 17 500 €
-
-Le calcul rapide : prix total TTC ÷ puissance en kWc.
-Si vous dépassez 2 250 €/kWc → demandez un deuxième devis.
-
-Testez votre devis gratuitement en 2 min : devis-pv.fr/diagnostic-gratuit
-```
-
-**Instagram** (11h) :
-```
-Votre devis solaire est-il au bon prix ? (chiffres mai 2026)
-
-3 kWc → 6 500 à 8 000 €
-6 kWc → 12 000 à 13 500 €
-9 kWc → 16 000 à 17 500 €
-
-Prix total ÷ kWc = votre prix au kWc.
-Au-dessus de 2 250 €/kWc → suspect.
-
-Sauvegardez ce post pour comparer votre devis.
-Lien en bio pour le diagnostic gratuit.
-
-#panneauxsolaires #devissolaire #photovoltaique #solaire2026 #autoconsommation #prixsolaire
-```
-
-**TikTok** (18h) — Script face-cam 45 sec :
-```
-[0-3s — HOOK]
-"Si ton devis pour 6 kWc dépasse 13 500 €, faut qu'on parle."
-
-[3-12s]
-"Un gars m'envoie son devis la semaine dernière. 25 000 euros pour 6 kWc. Il allait signer."
-
-[12-25s]
-"Le marché en 2026, c'est 12 000 à 13 500 euros tout compris pour 6 kWc. Lui il était à 25 000. Tu divises par 6, ça fait 4 167 euros le kilowatt-crête. Le maximum normal c'est 2 250."
-
-[25-40s]
-"En plus, crédit intégré sur 15 ans — coût réel 37 000 euros. Et la marque des panneaux : jamais entendu parler."
-
-[40-50s]
-"Il a refusé. Trois autres devis. Il a signé à 13 200 euros. 12 000 euros économisés. Commente 'devis' je t'envoie le lien pour vérifier le tien en 2 min."
-
-Caption : Devis à 25 000 € vs 13 200 € pour la MÊME puissance. Vérifie le tien. #panneauxsolaires #arnaque #devis #solaire #autoconsommation
-```
-
----
-
-#### Jour 2 — Mardi 6 mai
-
-**FB Page** (19h) :
-```
-3 signaux qui trahissent un mauvais devis solaire :
-
-1. Le commercial vous demande de signer le jour même.
-Les primes CRE sont révisées tous les trimestres, pas du jour au lendemain. Personne ne peut "garantir ce prix uniquement aujourd'hui".
-
-2. "Financement inclus" sans TAEG ni coût total.
-Un crédit sur 15 ans à 7 % TAEG transforme un devis à 14 000 € en facture de 22 000 €.
-
-3. Marque des panneaux introuvable sur Google.
-Tier 1 (Longi, JA Solar, Trina, Canadian Solar, SunPower) ou rien.
-
-Un seul de ces signaux = demandez un autre devis.
-
-devis-pv.fr
-```
-
-**Instagram** (11h) :
-```
-3 signaux d'un mauvais devis solaire
-
-1. "Signez aujourd'hui, demain le prix change"
-2. Crédit intégré sans TAEG visible
-3. Marque de panneaux introuvable
-
-Un seul signal = demandez un 2e devis.
-
-Lien en bio pour un diagnostic gratuit en 2 min.
-
-#arnaquesolaire #panneauxsolaires #devissolaire #photovoltaique #solaire2026
-```
-
----
-
-#### Jour 3 — Mercredi 7 mai
-
-**FB Page** (9h) :
-```
-Le seul calcul à faire avant de signer un devis solaire :
-
-Prix TTC total ÷ puissance en kWc = votre prix au kWc
-
-Exemple :
-14 000 € ÷ 6 kWc = 2 333 €/kWc → dans la norme
-25 000 € ÷ 6 kWc = 4 167 €/kWc → beaucoup trop cher
-
-Les seuils 2026 (au-dessus = suspect) :
-3 kWc : plus de 2 700 €/kWc
-6 kWc : plus de 2 250 €/kWc
-9 kWc : plus de 1 950 €/kWc
-
-Faites ce calcul maintenant sur votre devis.
-
-devis-pv.fr/simulateur-panneau-solaire
-```
-
-**Instagram** (19h) :
-```
-Le seul calcul à connaître sur un devis solaire :
-
-Prix TTC ÷ kWc = €/kWc
-
-14 000 € ÷ 6 = 2 333 €/kWc (normal)
-25 000 € ÷ 6 = 4 167 €/kWc (arnaque)
-
-Seuils suspects 2026 :
-3 kWc : > 2 700 €/kWc
-6 kWc : > 2 250 €/kWc
-9 kWc : > 1 950 €/kWc
-
-Sauvegardez ce calcul.
-
-#calculsolaire #devissolaire #panneauxsolaires #photovoltaique #solaire
-```
-
-**TikTok** (18h) — Script 40 sec :
-```
-[0-3s]
-"Cinq phrases d'un commercial solaire qui veulent dire : fuis."
-
-[3-10s]
-"Un : 'il faut signer aujourd'hui, la prime change demain.' Faux. La CRE révise les primes tous les trimestres."
-
-[10-18s]
-"Deux : 'l'État prend en charge 80 %.' Jamais. La prime max pour 6 kWc c'est 480 euros. Point."
-
-[18-26s]
-"Trois : 'crédit à zéro euro par mois.' C'est un crédit sur 15 ans avec un TAEG qu'il t'a pas dit."
-
-[26-36s]
-"Quatre : 'la marque c'est pas important.' Si. Tier 1 ou tu passes. Cinq : 'vous n'aurez plus de facture.' Non. Moins de facture, pas zéro."
-
-[36-45s]
-"Une seule de ces phrases = tu demandes un autre devis. Lien en bio."
-
-Caption : Les phrases qui trahissent l'arnaque solaire. #panneauxsolaires #arnaque #devis #solaire
-```
-
-**Reddit** (20h) — r/france :
-
-**Titre** : J'ai analysé plus de 100 devis panneaux solaires — voici les 3 arnaques les plus courantes en 2026
-
-```
-Salut,
-
-Je bosse dans le photovoltaïque résidentiel et je vois passer pas mal de devis. Voici les 3 trucs qui reviennent systématiquement sur les mauvais devis :
-
-**1. Prix au kWc x2 le marché**
-
-Le marché sérieux en 2026 pour une 6 kWc clé en main, c'est 12 000 à 13 500 € TTC (TVA 5,5 % via RGE depuis 2025). On voit encore régulièrement des devis à 22 000-28 000 € pour la même puissance.
-
-Calcul simple : prix total ÷ puissance = €/kWc. Au-dessus de 2 250 €/kWc sur une 6 kWc, posez des questions.
-
-**2. Crédit intégré opaque**
-
-Le commercial dit "financement à 0 €/mois", le client signe. En réalité c'est un crédit sur 12-15 ans à 6-9 % de TAEG. Le coût réel peut dépasser 35 000 € pour une installation qui en vaut 13 000.
-
-**3. Marque des panneaux absente ou fictive**
-
-Si le devis ne mentionne pas un fabricant Tier 1 (Longi, JA Solar, Trina, Canadian Solar) et ne joint pas la fiche technique, vous achetez à l'aveugle.
-
-**Se protéger** : demandez 3 devis, vérifiez le RGE sur qualit-enr.org, et faites le calcul €/kWc vous-même.
-
-Des questions ? Je réponds.
-```
-
----
-
-#### Jour 4 — Jeudi 8 mai
+#### Jour 1 — Jeudi 8 mai
 
 **FB Page** (9h) :
 ```
@@ -335,7 +144,7 @@ Aucune inscription. Lien en bio.
 
 ---
 
-#### Jour 5 — Vendredi 9 mai
+#### Jour 2 — Vendredi 9 mai
 
 **FB Page** (19h) :
 ```
@@ -432,7 +241,7 @@ Si vous avez des questions sur les chiffres, je réponds.
 
 ---
 
-#### Jour 6 — Samedi 10 mai
+#### Jour 3 — Samedi 10 mai
 
 **FB Page** (9h) :
 ```
@@ -477,7 +286,7 @@ Sauvegardez ce post.
 
 ---
 
-#### Jour 7 — Dimanche 11 mai
+#### Jour 4 — Dimanche 11 mai
 
 **FB Page** (19h) :
 ```
@@ -540,7 +349,7 @@ Point important : le prix de votre installation compte. Payer 25 000 € un syst
 
 ---
 
-#### Jour 8 — Lundi 12 mai
+#### Jour 5 — Lundi 12 mai
 
 **FB Page** (9h) :
 ```
@@ -597,7 +406,7 @@ Caption : Vérifier RGE en 30 sec. #panneauxsolaires #RGE #solaire #installateur
 
 ---
 
-#### Jour 9 — Mardi 13 mai
+#### Jour 6 — Mardi 13 mai
 
 **FB Page** (19h) :
 ```
@@ -641,7 +450,7 @@ Un bon installateur ne force jamais un crédit.
 
 ---
 
-#### Jour 10 — Mercredi 14 mai
+#### Jour 7 — Mercredi 14 mai
 
 **FB Page** (9h) :
 ```
@@ -720,7 +529,7 @@ Curieux d'avoir vos retours d'expérience.
 
 ---
 
-#### Jour 11 — Jeudi 15 mai
+#### Jour 8 — Jeudi 15 mai
 
 **FB Page** (9h) :
 ```
@@ -759,7 +568,7 @@ Sauvegardez ce post.
 
 ---
 
-#### Jour 12 — Vendredi 16 mai
+#### Jour 9 — Vendredi 16 mai
 
 **FB Page** (19h) :
 ```
@@ -843,7 +652,7 @@ Le droit de rétractation de 14 jours existe mais beaucoup ne le savent pas. Et 
 
 ---
 
-#### Jour 13 — Samedi 17 mai
+#### Jour 10 — Samedi 17 mai
 
 **FB Page** (9h) :
 ```
@@ -882,7 +691,7 @@ Lien en bio.
 
 ---
 
-#### Jour 14 — Dimanche 18 mai
+#### Jour 11 — Dimanche 18 mai
 
 **FB Page** (19h) :
 ```
@@ -948,7 +757,7 @@ Conseil bonus : demandez systématiquement 3 devis. L'écart entre le premier et
 
 ---
 
-#### Jour 15 — Lundi 19 mai
+#### Jour 12 — Lundi 19 mai
 
 **FB Page** (9h) :
 ```
@@ -995,7 +804,7 @@ Caption : 62 % des devis trop chers. Le vôtre aussi ? #panneauxsolaires #devis 
 
 ---
 
-#### Jour 16 — Mardi 20 mai
+#### Jour 13 — Mardi 20 mai
 
 **FB Page** (19h) :
 ```
@@ -1032,7 +841,7 @@ Lien en bio.
 
 ---
 
-#### Jour 17 — Mercredi 21 mai
+#### Jour 14 — Mercredi 21 mai
 
 **FB Page** (9h) :
 ```
@@ -1114,7 +923,7 @@ Des questions ?
 
 ---
 
-#### Jour 18 — Jeudi 22 mai
+#### Jour 15 — Jeudi 22 mai
 
 **FB Page** (9h) :
 ```
@@ -1153,7 +962,7 @@ FAQ devis solaire 2026
 
 ---
 
-#### Jour 19 — Vendredi 23 mai
+#### Jour 16 — Vendredi 23 mai
 
 **FB Page** (19h) :
 ```
@@ -1234,7 +1043,7 @@ Le surcoût d'un panneau Tier 1 vs un panneau inconnu est minime (200-500 € su
 
 ---
 
-#### Jour 20 — Samedi 24 mai
+#### Jour 17 — Samedi 24 mai
 
 **FB Page** (9h) :
 ```
@@ -1270,7 +1079,7 @@ Si votre devis propose un onduleur garanti 5 ans → demandez mieux.
 
 ---
 
-#### Jour 21 — Dimanche 25 mai
+#### Jour 18 — Dimanche 25 mai
 
 **FB Page** (19h) :
 ```
@@ -1333,7 +1142,7 @@ Le point commun : toutes ces erreurs sont évitables en 15 minutes de vérificat
 
 ---
 
-#### Jour 22 — Lundi 26 mai
+#### Jour 19 — Lundi 26 mai
 
 **FB Page** (9h) :
 ```
@@ -1387,7 +1196,7 @@ Caption : Maintenant = produire cet été. Mais sans se précipiter. #panneauxso
 
 ---
 
-#### Jour 23 — Mardi 27 mai
+#### Jour 20 — Mardi 27 mai
 
 **FB Page** (19h) :
 ```
@@ -1421,7 +1230,7 @@ Lien en bio.
 
 ---
 
-#### Jour 24 — Mercredi 28 mai
+#### Jour 21 — Mercredi 28 mai
 
 **FB Page** (9h) :
 ```
@@ -1504,7 +1313,7 @@ Plus que le timing, c'est le prix du devis qui fait la différence. Un devis à 
 
 ---
 
-#### Jour 25 — Jeudi 29 mai
+#### Jour 22 — Jeudi 29 mai
 
 **FB Page** (9h) :
 ```
@@ -1541,7 +1350,7 @@ Si ces frais ne sont pas dans le devis → demandez pourquoi.
 
 ---
 
-#### Jour 26 — Vendredi 30 mai
+#### Jour 23 — Vendredi 30 mai
 
 **FB Page** (19h) :
 ```
@@ -1613,7 +1422,7 @@ Contexte : je bosse dans le PV depuis plusieurs années et je voyais trop de pro
 
 ---
 
-#### Jour 27 — Samedi 31 mai
+#### Jour 24 — Samedi 31 mai
 
 **FB Page** (9h) :
 ```
@@ -1651,7 +1460,7 @@ Lien en bio.
 
 ---
 
-#### Jour 28 — Dimanche 1er juin
+#### Jour 25 — Dimanche 1er juin
 
 **FB Page** (19h) :
 ```
@@ -1718,7 +1527,7 @@ N'hésitez pas si vous avez des questions.
 
 ---
 
-#### Jour 29 — Lundi 2 juin
+#### Jour 26 — Lundi 2 juin
 
 **FB Page** (9h) :
 ```
@@ -1771,7 +1580,7 @@ Caption : 1 mois, 60 % de devis trop chers. Le vôtre aussi ? #panneauxsolaires 
 
 ---
 
-#### Jour 30 — Mardi 3 juin
+#### Jour 27 — Mardi 3 juin
 
 **FB Page** (19h) :
 ```
