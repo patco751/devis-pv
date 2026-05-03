@@ -25,9 +25,9 @@ const INCLINAISON: Record<string, { label: string; desc: string; coeff: number }
 type Power = 3 | 6 | 9;
 
 const INSTALL: Record<Power, { min: number; max: number; median: number; panels: number; surface: number; prime: number }> = {
-  3: { min: 8500, max: 10500, median: 9500, panels: 8, surface: 14, prime: 900 },
-  6: { min: 14000, max: 17000, median: 15500, panels: 15, surface: 26, prime: 1380 },
-  9: { min: 18000, max: 23000, median: 20500, panels: 22, surface: 38, prime: 1800 },
+  3: { min: 6500, max: 8000, median: 7250, panels: 8, surface: 14, prime: 900 },
+  6: { min: 12000, max: 13500, median: 12750, panels: 15, surface: 26, prime: 1380 },
+  9: { min: 16000, max: 17500, median: 16750, panels: 22, surface: 38, prime: 1800 },
 };
 
 interface Result {

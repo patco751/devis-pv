@@ -38,12 +38,12 @@ export default async function CityPage({
   const city = getCity(citySlug);
   if (!city) notFound();
 
-  const priceRange3 = { min: 8500, max: 10500 };
-  const priceRange6 = { min: 14000, max: 17000 };
-  const priceRange9 = { min: 18000, max: 23000 };
+  const priceRange3 = { min: 6500, max: 8000 };
+  const priceRange6 = { min: 12000, max: 13500 };
+  const priceRange9 = { min: 16000, max: 17500 };
 
   const roi6kWc = Math.round(
-    (6 * city.avgProduction * 0.18 * 25 - 15500) / 15500 * 100
+    (6 * city.avgProduction * 0.18 * 25 - 12750) / 12750 * 100
   );
 
   return (

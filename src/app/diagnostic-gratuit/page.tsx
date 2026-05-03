@@ -34,7 +34,7 @@ function computeScore(state: QuizState) {
 
   if (puissanceKwc > 0 && prixTotal > 0) {
     const prixKwc = prixTotal / puissanceKwc;
-    if (prixKwc >= 1500 && prixKwc <= 2500) {
+    if (prixKwc >= 1800 && prixKwc <= 2500) {
       score += 40;
       positives.push("Prix au kWc dans la fourchette normale du marché");
     } else if (prixKwc > 2500 && prixKwc <= 3000) {
@@ -43,7 +43,7 @@ function computeScore(state: QuizState) {
     } else if (prixKwc > 3000) {
       score += 5;
       alerts.push(`Prix au kWc très élevé (${Math.round(prixKwc)} €/kWc) — risque de surcoût`);
-    } else if (prixKwc < 1500 && prixKwc > 0) {
+    } else if (prixKwc < 1800 && prixKwc > 0) {
       score += 15;
       alerts.push(`Prix au kWc inhabituellement bas (${Math.round(prixKwc)} €/kWc) — vérifiez ce qui est inclus`);
     }
