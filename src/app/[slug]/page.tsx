@@ -43,7 +43,7 @@ export default async function CityPage({
   const priceRange9 = { min: 16000, max: 17500 };
 
   const roi6kWc = Math.round(
-    (6 * city.avgProduction * 0.18 * 25 - 12750) / 12750 * 100
+    (6 * city.avgProduction * 0.10 * 25 - (12750 - 480)) / (12750 - 480) * 100
   );
 
   return (

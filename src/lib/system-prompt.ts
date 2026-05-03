@@ -126,12 +126,16 @@ RÈGLES IMPÉRATIVES
 - Formate ta réponse en JSON structuré selon le schéma fourni par l'utilisateur.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-RÉFÉRENCES DE PRIX (source : photovoltaique.info, 2024-2025)
+RÉFÉRENCES DE PRIX (sources : photovoltaique.info, CRE, HelloWatt — T2 2026)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Prix au Wc en toiture (surimposition) :
-- < 3 kWc : 2.50 – 3.00 €TTC/Wc (2.10 – 2.50 €HT/Wc)
-- 3 – 9 kWc : 2.00 – 2.50 €TTC/Wc (1.70 – 2.10 €HT/Wc)
+TVA applicable :
+- ≤ 9 kWc résidentiel : 5,5 % (depuis octobre 2025)
+- > 9 kWc : 20 %
+
+Prix au Wc en toiture (surimposition, TTC pour ≤ 9 kWc à 5,5 %) :
+- < 3 kWc : 2.25 – 2.70 €TTC/Wc
+- 3 – 9 kWc : 1.56 – 2.25 €TTC/Wc
 - 9 – 36 kWc : 1.20 – 1.70 €HT/Wc
 - 36 – 100 kWc : 1.00 – 1.20 €HT/Wc
 - 100 – 500 kWc : 0.80 – 1.00 €HT/Wc
@@ -156,15 +160,25 @@ Coûts annexes :
 - Diagnostic structure toiture : 1 000 – 5 000 €
 - Variation régionale : jusqu'à +30 % dans le nord de la France
 
-Prime à l'autoconsommation (tarifs T1 2025, à ajuster) :
-- ≤ 3 kWc : 300 €/kWc
-- 3 – 9 kWc : 230 €/kWc
-- 9 – 36 kWc : 200 €/kWc
-- 36 – 100 kWc : 100 €/kWc
+Prime à l'autoconsommation (tarifs T2 2026, arrêté CRE) :
+- ≤ 9 kWc : 80 €/kWc (soit 240 € pour 3 kWc, 480 € pour 6 kWc, 720 € pour 9 kWc)
+- 9 – 36 kWc : 120 €/kWc
+- 36 – 100 kWc : 60 €/kWc
+⚠ La prime a fortement baissé depuis 2024 (elle était à 230-300 €/kWc pour ≤ 9 kWc).
 
-Tarif de rachat surplus EDF OA (T1 2025, à ajuster) :
-- ≤ 9 kWc : ~0.1297 €/kWh
-- 9 – 36 kWc : ~0.0778 €/kWh
+Tarif de rachat surplus EDF OA (T2 2026) :
+- ≤ 9 kWc : 0.04 €/kWh
+- 9 – 36 kWc : 0.0473 €/kWh
+- 36 – 100 kWc : 0.0473 €/kWh
+⚠ Baisse très forte depuis T1 2025 (était ~0.13 €/kWh pour ≤ 9 kWc).
+
+Tarif de rachat vente totale EDF OA (T2 2026) :
+- ≤ 9 kWc : vente totale supprimée depuis mars 2025
+- 9 – 36 kWc : 0.0805 €/kWh
+- 36 – 100 kWc : 0.0700 €/kWh
+
+Prix de l'électricité TRV (tarif réglementé, Base 6 kVA, février 2026) :
+- 0.1940 €/kWh TTC
 
 Production annuelle moyenne estimée :
 - Nord de la France : 900 – 1 100 kWh/kWc/an

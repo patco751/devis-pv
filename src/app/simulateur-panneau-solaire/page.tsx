@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     q: "Quelles aides pour les panneaux solaires en 2026 ?",
-    a: "La prime à l'autoconsommation (jusqu'à 900 € pour 3 kWc), l'obligation d'achat EDF OA pour le surplus, et la TVA réduite à 10 % pour les installations ≤ 3 kWc. Un installateur certifié RGE est requis pour bénéficier de ces aides.",
+    a: "La prime à l'autoconsommation (240 € pour 3 kWc, 480 € pour 6 kWc, 720 € pour 9 kWc), l'obligation d'achat EDF OA pour le surplus à 0,04 €/kWh, et la TVA réduite à 5,5 % pour les installations ≤ 9 kWc. Un installateur certifié RGE est requis pour bénéficier de ces aides.",
   },
   {
     q: "Quelle différence entre ce simulateur et l'analyse de devis ?",

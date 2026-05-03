@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { cities, getCity } from "@/lib/cities-data";
 
-const ELECTRICITY_PRICE = 0.2516;
-const SURPLUS_PRICE = 0.1297;
+const ELECTRICITY_PRICE = 0.194;
+const SURPLUS_PRICE = 0.04;
 const AUTOCONSO_RATE = 0.4;
 
 const ORIENTATION: Record<string, { label: string; coeff: number }> = {
@@ -25,9 +25,9 @@ const INCLINAISON: Record<string, { label: string; desc: string; coeff: number }
 type Power = 3 | 6 | 9;
 
 const INSTALL: Record<Power, { min: number; max: number; median: number; panels: number; surface: number; prime: number }> = {
-  3: { min: 6500, max: 8000, median: 7250, panels: 8, surface: 14, prime: 900 },
-  6: { min: 12000, max: 13500, median: 12750, panels: 15, surface: 26, prime: 1380 },
-  9: { min: 16000, max: 17500, median: 16750, panels: 22, surface: 38, prime: 1800 },
+  3: { min: 6500, max: 8000, median: 7250, panels: 8, surface: 14, prime: 240 },
+  6: { min: 12000, max: 13500, median: 12750, panels: 15, surface: 26, prime: 480 },
+  9: { min: 16000, max: 17500, median: 16750, panels: 22, surface: 38, prime: 720 },
 };
 
 interface Result {

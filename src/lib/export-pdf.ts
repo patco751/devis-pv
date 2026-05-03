@@ -262,18 +262,17 @@ export function generatePDF(data: AnalyseDevis): jsPDF {
 
     // Paramètres (identiques à resultats/page.tsx)
     const tauxAC = 0.45;
-    const prixElec = 0.2516;
-    const tarifRachat = puissanceKwc <= 9 ? 0.1297 : 0.0778;
+    const prixElec = 0.194;
+    const tarifRachat = puissanceKwc <= 9 ? 0.04 : 0.0473;
     const degrad = 0.005;
     const augElec = 0.04;
     const opexAn = prixTtc * 0.01;
     const coutOnduleur = prixTtc * 0.12;
 
     let primeKwc = 0;
-    if (puissanceKwc <= 3) primeKwc = 300;
-    else if (puissanceKwc <= 9) primeKwc = 230;
-    else if (puissanceKwc <= 36) primeKwc = 200;
-    else primeKwc = 100;
+    if (puissanceKwc <= 9) primeKwc = 80;
+    else if (puissanceKwc <= 36) primeKwc = 120;
+    else primeKwc = 60;
     const primeTotal = primeKwc * puissanceKwc;
     const primeAn = primeTotal / 5;
     const coutNet = prixTtc - primeTotal;

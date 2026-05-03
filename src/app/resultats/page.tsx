@@ -129,8 +129,8 @@ function FinancialProjection({ extraction }: { extraction: AnalyseDevis["extract
 
   // Paramètres de calcul (source : expert-pv / photovoltaique.info)
   const tauxAutoconsoEst = 0.45; // 45% d'autoconsommation estimé
-  const prixElecKwh = 0.2516; // prix moyen TTC 2025
-  const tarifRachat = puissanceKwc <= 9 ? 0.1297 : 0.0778; // tarif rachat surplus EDF OA
+  const prixElecKwh = 0.194; // prix TRV Base 6kVA T2 2026
+  const tarifRachat = puissanceKwc <= 9 ? 0.04 : 0.0473; // tarif rachat surplus EDF OA T2 2026
   const degradation = 0.005; // 0.5%/an dégradation panneaux (garantie linéaire constructeur)
   const augElec = 0.04; // +4%/an prix électricité (hypothèse RTE/CRE)
   const dureeVie = 25;
@@ -139,10 +139,9 @@ function FinancialProjection({ extraction }: { extraction: AnalyseDevis["extract
 
   // Prime autoconsommation (versée sur 5 ans, 1/5 par an)
   let primeParKwc = 0;
-  if (puissanceKwc <= 3) primeParKwc = 300;
-  else if (puissanceKwc <= 9) primeParKwc = 230;
-  else if (puissanceKwc <= 36) primeParKwc = 200;
-  else primeParKwc = 100;
+  if (puissanceKwc <= 9) primeParKwc = 80;
+  else if (puissanceKwc <= 36) primeParKwc = 120;
+  else primeParKwc = 60;
   const primeTotal = primeParKwc * puissanceKwc;
   const primeAnnuelle = primeTotal / 5; // versement sur 5 ans
 
